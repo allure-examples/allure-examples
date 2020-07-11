@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>io.qameta.allure</groupId>
-    <artifactId>allure-examples</artifactId>
+    <artifactId>examples</artifactId>
     <version>1.0</version>
 
 </project>
