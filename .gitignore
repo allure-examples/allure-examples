@@ -1,4 +1,5 @@
 /.idea/
 /.allure/
+*/.allure/
 *.iml
 *target/
