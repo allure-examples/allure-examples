@@ -6,6 +6,7 @@ on:
       - '!master'
     paths:
     - 'maven-junit5/**'
+    - '**/maven-junit5.yml'
 
 jobs:
   autotests:
@@ -13,10 +14,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+
       - name: Test local action
         uses: ./allure-report-action
         id: allure-report
         with:
-          who-to-greet: 'Aegon Targaryen'
-      - name: Get the output time
-        run: echo "The time was ${{ steps.allure-report.outputs.time }}"
+          allure-results: allure-results
+          allure-report: allure-report
+
+      - uses: actions/upload-artifact@master
+        with:
+          name: allure-report
+          path: allure-report
