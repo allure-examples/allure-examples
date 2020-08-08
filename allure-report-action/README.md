@@ -1,21 +1,28 @@
 # Allure Report with history action
 
-This action prints "Hello World" or "Hello" + the name of a person to greet to the log.
+Generates Allure Report with history
 
 ## Inputs
 
-### `who-to-greet`
+### `results-dir`
 
-**Required** The name of the person to greet. Default `"World"`.
+**Required** The relative path to the Allure results directory. 
 
-## Outputs
+Default `allure-results`.
 
-### `time`
+### `report-dir`
 
-The time we greeted you.
+**Required** The relative path to the directory where Allure will write the generated report. 
+
+Default `allure-results`.
 
 ## Example usage
 
-uses: actions/hello-world-docker-action@v1
-with:
-  who-to-greet: 'Mona the Octocat'
+```yaml
+- name: Test local action
+  uses: ./allure-report-action
+  id: allure-report
+  with:
+    allure-results: allure-results
+    allure-report: allure-report
+```
