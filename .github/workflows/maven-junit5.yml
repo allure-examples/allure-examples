@@ -1,0 +1,22 @@
+name: maven-junit5
+
+on:
+  push:
+    branches-ignore:
+      - '!master'
+    paths:
+    - 'maven-junit5/**'
+
+jobs:
+  autotests:
+    name: Generate Allure Report
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Test local action
+        uses: ./allure-report-action
+        id: allure-report
+        with:
+          who-to-greet: 'Aegon Targaryen'
+      - name: Get the output time
+        run: echo "The time was ${{ steps.allure-report.outputs.time }}"
