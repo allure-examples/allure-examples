@@ -1,6 +1,5 @@
 #! /usr/bin/env bash
 
-#echo "entrypoint.sh"
 cd /github/workspace
 #echo "listing files in workspace ..."
 #ls -l
@@ -21,7 +20,7 @@ cd /github/workspace
 #fi
 
 unset JAVA_HOME
-echo "generating report from ${INPUT_ALLURE_RESULTS} to ${INPUT_ALLURE_REPORT} and ${INPUT_ALLURE_VESRION} ..."
+echo "generating report from ${INPUT_ALLURE_RESULTS} to ${INPUT_ALLURE_REPORT} and ${INPUT_ALLURE_VERSION} ..."
 allure generate --clean ${INPUT_ALLURE_RESULTS} -o ${INPUT_ALLURE_REPORT}
 echo "listing report directory ..."
 ls -l ${INPUT_ALLURE_REPORT}
