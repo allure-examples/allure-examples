@@ -21,6 +21,10 @@ inputs:
     description: 'Folder for allure history'
     required: true
     default: 'allure-history'
+  subfolder:
+    description: 'subfolder'
+    required: false
+    default: ''
   github_run_num:
     description: 'GitHub Actions build number'
     required: true
@@ -41,6 +45,6 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - --build-arg RELEASE=${{ inputs.allure_version }}
+  #  - --build-arg RELEASE=${{ inputs.allure_version }}
   #  - ${{ inputs.results-dir }}
   #  - ${{ inputs.report-dir }}

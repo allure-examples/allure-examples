@@ -11,6 +11,9 @@ REPOSITORY_NAME=${REPOSITORY_OWNER_SLASH_NAME##*/}
 GITHUB_PAGES_WEBSITE_URL="https://${INPUT_GITHUB_REPO_OWNER}.github.io/${REPOSITORY_NAME}"
 #echo "Github pages url $GITHUB_PAGES_WEBSITE_URL"
 
+INPUT_ALLURE_HISTORY=${INPUT_ALLURE_HISTORY}${SUBFOLDER}
+echo "allure history folder ${INPUT_ALLURE_HISTORY}"
+
 echo "index.html"
 echo "<!DOCTYPE html><meta charset=\"utf-8\"><meta http-equiv=\"refresh\" content=\"0; URL=${GITHUB_PAGES_WEBSITE_URL}/${INPUT_GITHUB_RUN_NUM}\">" > index.html
 cat index.html
@@ -36,5 +39,6 @@ echo "generating report from ${INPUT_ALLURE_RESULTS} to ${INPUT_ALLURE_REPORT} .
 allure generate --clean ${INPUT_ALLURE_RESULTS} -o ${INPUT_ALLURE_REPORT}
 #echo "listing report directory ..."
 #ls -l ${INPUT_ALLURE_REPORT}
-cp -r ./${INPUT_ALLURE_REPORT}/. ./${INPUT_ALLURE_HISTORY}/${INPUT_GITHUB_BUILD_NUM}
+
+cp -r ./${INPUT_ALLURE_REPORT}/. ./${INPUT_ALLURE_HISTORY}/${INPUT_GITHUB_RUN_NUM}
 cp -r ./${INPUT_ALLURE_REPORT}/history/. ./${INPUT_ALLURE_HISTORY}/last-history
