@@ -11,15 +11,14 @@ on:
 env:
   working_dir: ${{ github.workflow }}
 
-defaults:
-  run:
-    #shell: bash
-    working-directory: ${{ github.workflow }}
-
 jobs:
   autotests:
     name: Generate Allure Report
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        #shell: bash
+        working-directory: ${{ env.working_dir }}
     steps:
       - uses: actions/checkout@v2
 
