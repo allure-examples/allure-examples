@@ -1,22 +1,22 @@
 name: 'Allure Report with history'
 description: 'Generate Allure Report with history'
 inputs:
-  allure-results:
+  allure_results:
     description: 'Allure test result data dir'
     required: true
     default: 'allure-results'
-  allure-report:
+  allure_report:
     description: 'Allure report target dir'
     required: true
     default: 'allure-report'
-  allure-version:
+  allure_version:
     description: 'Allure commandline version'
     required: true
     default: '2.13.5'
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  args:
-    - ${{ inputs.results-dir }}
-    - ${{ inputs.report-dir }}
-    - ${{ inputs.allure-version }}
+  #args:
+  #  - ${{ inputs.results-dir }}
+  #  - ${{ inputs.report-dir }}
+  #  - ${{ inputs.allure-version }}

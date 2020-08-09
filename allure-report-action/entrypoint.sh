@@ -2,13 +2,12 @@
 
 #echo "entrypoint.sh"
 cd /github/workspace
-echo "listing files in workspace ..."
-ls -l
+#echo "listing files in workspace ..."
+#ls -l
 
 #echo "generating report ..."
-RESULTS_DIRECTORY="$1"
-REPORT_DIRECTORY="$2"
-#ALLURE_VERSION=$3
+#RESULTS_DIRECTORY="$1"
+#REPORT_DIRECTORY="$2"
 #RESULTS_HISTORY=$RESULTS_DIRECTORY/history
 #REPORT_HISTORY=$REPORT_DIRECTORY/history
 
@@ -22,8 +21,7 @@ REPORT_DIRECTORY="$2"
 #fi
 
 unset JAVA_HOME
-echo "generating report from $1 to $2 ..."
-echo "generating report from $RESULTS_DIRECTORY to $REPORT_DIRECTORY ..."
-allure generate --clean $RESULTS_DIRECTORY -o $REPORT_DIRECTORY
+echo "generating report from ${INPUT_ALLURE_RESULTS} to ${INPUT_ALLURE_REPORT} and ${INPUT_ALLURE_VESRION} ..."
+allure generate --clean ${INPUT_ALLURE_RESULTS} -o ${INPUT_ALLURE_REPORT}
 echo "listing report directory ..."
-ls -l $REPORT_DIRECTORY
+ls -l ${INPUT_ALLURE_REPORT}
