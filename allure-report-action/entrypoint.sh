@@ -18,7 +18,6 @@ echo "index.html"
 echo "<!DOCTYPE html><meta charset=\"utf-8\"><meta http-equiv=\"refresh\" content=\"0; URL=${GITHUB_PAGES_WEBSITE_URL}/${INPUT_GITHUB_RUN_NUM}\">" > index.html
 cat index.html
 mv ./index.html ./${INPUT_ALLURE_HISTORY}
-mv ./index2.html ./${INPUT_ALLURE_HISTORY}
 
 echo "executor.json"
 echo '{"name":"GitHub Actions","type":"github","reportName":"Allure Report with history",' > executor.json
