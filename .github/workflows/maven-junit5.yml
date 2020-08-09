@@ -14,7 +14,7 @@ env:
 defaults:
   run:
     #shell: bash
-    working-directory: ${{ env.working_dir }}
+    working-directory: ${{ github.workflow }}
 
 jobs:
   autotests:
