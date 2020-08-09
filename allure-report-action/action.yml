@@ -12,7 +12,7 @@ inputs:
   allure_version:
     description: 'Allure commandline version'
     required: true
-    default: ${{ github.run_number }}
+    default: '2.13.5'
   gh_pages:
     description: 'Folder with gh-pages branch'
     required: true
@@ -21,10 +21,22 @@ inputs:
     description: 'Folder for allure history'
     required: true
     default: 'allure-history'
-  github_pages_url:
-    description: 'GitHub Pages URL'
+  github_build_num:
+    description: 'GitHub Actions build number'
     required: true
-    default: 'github.com'
+    default: ${{ github.run_number }}
+  github_run_id:
+    description: 'GitHub Actions run id'
+    required: true
+    default: ${{ github.run_id }}
+  github_repo:
+    description: 'GitHub repository'
+    required: true
+    default: ${{ github.repository }}
+  github_repo_owner:
+    description: 'GitHub repository owner'
+    required: true
+    default: ${{ github.repository_owner }}
 runs:
   using: 'docker'
   image: 'Dockerfile'

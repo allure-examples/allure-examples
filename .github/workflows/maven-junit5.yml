@@ -9,16 +9,17 @@ on:
     #- '**/maven-junit5.yml'
 
 env:
-  working_dir: maven-junit5
+  working_dir: ${{ github.workflow }}
+
+defaults:
+  run:
+    #shell: bash
+    working-directory: ${{ env.working_dir }}
 
 jobs:
   autotests:
     name: Generate Allure Report
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        #shell: bash
-        working-directory: ${{ env.working_dir }}
     steps:
       - uses: actions/checkout@v2
 
@@ -27,9 +28,9 @@ jobs:
           path: |
             ~/.m2/repository
           #  ~/.gradle/caches
-          key: ${{ runner.os }}-maven-junit5-${{ hashFiles('maven-junit5/pom.xml') }}
+          key: ${{ runner.os }}-${{ env.working_dir }}-${{ hashFiles('${{ env.working_dir }}/pom.xml') }}
           restore-keys: |
-            ${{ runner.os }}-maven-junit5-
+            ${{ runner.os }}-${{ env.working_dir }}-
 
       - name: Set up JDK
         uses: actions/setup-java@v1
@@ -44,16 +45,6 @@ jobs:
         run: mvn test
         continue-on-error: true
 
-      #- run: ls -l target
-
-#      - name: Composite Allure Action
-#        uses: ./allure-history-action
-#        if: always()
-#        with:
-#          allure_results: ${{ env.working_dir }}/target/allure-results
-#          allure_report: allure-report
-#          branch: gh-pages
-
       - name: Get Allure history
         uses: actions/checkout@v2
         if: always()
@@ -65,13 +56,12 @@ jobs:
       - name: Test local action
         uses: ./allure-report-action
         if: always()
-        id: allure-report
+        #id: allure-report
         with:
           allure_results: ${{ env.working_dir }}/target/allure-results
-          gh_pages: gh_pages
+          #gh_pages: gh-pages
+          #allure_report: allure-report
           allure_history: allure-history
-          allure_report: allure-report
-          github_pages_url: ${{ github.repository }}
 
       - name: Deploy report to Github Pages
         if: always()
@@ -79,7 +69,7 @@ jobs:
         env:
           PERSONAL_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           PUBLISH_BRANCH: gh-pages
-          PUBLISH_DIR: allure-report
+          PUBLISH_DIR: allure-history
 
       #- uses: actions/upload-artifact@master
       #  with:
