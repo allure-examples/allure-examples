@@ -54,7 +54,7 @@ jobs:
         if: always()
         id: allure-report
         with:
-          allure_results: allure-results
+          allure_results: target/allure-results
           allure_report: allure-report
 
       - name: Deploy report to Github Pages
