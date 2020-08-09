@@ -56,7 +56,7 @@ jobs:
         if: always()
         id: allure-report
         with:
-          allure_results: $(pwd)/target/allure-results
+          allure_results: maven-junit5/target/allure-results
           allure_report: allure-report
 
       - name: Deploy report to Github Pages
