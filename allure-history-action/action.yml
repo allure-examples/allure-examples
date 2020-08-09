@@ -39,3 +39,12 @@ runs:
         PERSONAL_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         PUBLISH_BRANCH: ${{ inputs.branch }}
         PUBLISH_DIR: allure-report
+
+
+#      - name: Composite Allure Action
+#        uses: ./allure-history-action
+#        if: always()
+#        with:
+#          allure_results: ${{ env.working_dir }}/target/allure-results
+#          allure_report: allure-report
+#          branch: gh-pages
