@@ -1,8 +1,9 @@
 #! /usr/bin/env bash
 
+ls -l
 cd /github/workspace
-#echo "listing files in workspace ..."
-#ls -l
+echo "listing files in workspace ..."
+ls -l
 
 #echo "generating report ..."
 #RESULTS_DIRECTORY="$1"
