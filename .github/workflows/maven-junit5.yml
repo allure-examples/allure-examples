@@ -41,31 +41,39 @@ jobs:
         run: mvn test
         continue-on-error: true
 
-      - run: ls -l target
+      #- run: ls -l target
 
-      - name: Get Allure history
-        uses: actions/checkout@v2
+      - name: Composite Allure Action
+        uses: ./allure-history-action
         if: always()
-        continue-on-error: true
-        with:
-          ref: gh-pages
-          path: gh-pages
-
-      - name: Test local action
-        uses: ./allure-report-action
-        if: always()
-        id: allure-report
         with:
           allure_results: maven-junit5/target/allure-results
           allure_report: allure-report
+          branch: gh-pages
 
-      - name: Deploy report to Github Pages
-        if: always()
-        uses: peaceiris/actions-gh-pages@v2
-        env:
-          PERSONAL_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          PUBLISH_BRANCH: gh-pages
-          PUBLISH_DIR: allure-report
+#      - name: Get Allure history
+#        uses: actions/checkout@v2
+#        if: always()
+#        continue-on-error: true
+#        with:
+#          ref: gh-pages
+#          path: gh-pages
+#
+#      - name: Test local action
+#        uses: ./allure-report-action
+#        if: always()
+#        id: allure-report
+#        with:
+#          allure_results: maven-junit5/target/allure-results
+#          allure_report: allure-report
+#
+#      - name: Deploy report to Github Pages
+#        if: always()
+#        uses: peaceiris/actions-gh-pages@v2
+#        env:
+#          PERSONAL_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+#          PUBLISH_BRANCH: gh-pages
+#          PUBLISH_DIR: allure-report
 
       #- uses: actions/upload-artifact@master
       #  with:
