@@ -44,7 +44,7 @@ inputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  args:
+  #args:
   #  - --build-arg RELEASE=${{ inputs.allure_version }}
   #  - ${{ inputs.results-dir }}
   #  - ${{ inputs.report-dir }}
