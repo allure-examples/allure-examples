@@ -5,9 +5,9 @@ plugins {
 }
 
 group 'io.qameta.allure.examples'
-version '1.1'
+version '1.0'
 
-def allureVersion = "2.13.3"
+def allureVersion = "2.13.5"
 
 allure {
     autoconfigure = true
