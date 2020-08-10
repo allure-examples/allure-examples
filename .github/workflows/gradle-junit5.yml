@@ -53,8 +53,8 @@ jobs:
           ref: gh-pages
           path: gh-pages
 
-      - name: Test local action
-        uses: simple-elf/allure-report-action@v1
+      - name: Allure Report action from marketplace
+        uses: simple-elf/allure-report-action@v1.1
         if: always()
         #id: allure-report
         with:
