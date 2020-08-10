@@ -3,3 +3,4 @@
 */.allure/
 *.iml
 *target/
+*build/
