@@ -9,6 +9,9 @@ version '1.0'
 
 def allureVersion = "2.13.5"
 
+compileJava.options.encoding = "UTF-8"
+compileTestJava.options.encoding = "UTF-8"
+
 allure {
     autoconfigure = true
     aspectjweaver = true
