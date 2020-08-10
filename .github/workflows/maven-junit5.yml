@@ -63,7 +63,7 @@ jobs:
           allure_history: allure-history
           subfolder: ${{ env.working_dir }}
 
-      - run: cp index.html allure-history
+      - run: cp $(pwd)/index.html $(pwd)/allure-history/
         if: always()
         continue-on-error: true
         working-directory: ${{ github.workspace }}
@@ -75,8 +75,3 @@ jobs:
           PERSONAL_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           PUBLISH_BRANCH: gh-pages
           PUBLISH_DIR: allure-history
-
-      #- uses: actions/upload-artifact@master
-      #  with:
-      #    name: allure-report
-      #    path: allure-report
