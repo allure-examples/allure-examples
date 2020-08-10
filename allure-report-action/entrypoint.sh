@@ -11,9 +11,13 @@ REPOSITORY_NAME=${REPOSITORY_OWNER_SLASH_NAME##*/}
 GITHUB_PAGES_WEBSITE_URL="https://${INPUT_GITHUB_REPO_OWNER}.github.io/${REPOSITORY_NAME}"
 #echo "Github pages url $GITHUB_PAGES_WEBSITE_URL"
 
-INPUT_ALLURE_HISTORY="${INPUT_ALLURE_HISTORY}${INPUT_SUBFOLDER}"
-echo "allure history folder ${INPUT_ALLURE_HISTORY}"
-mkdir -p ./${INPUT_ALLURE_HISTORY}
+if [[ ${INPUT_SUBFOLDER} != '' ]]; then
+    INPUT_ALLURE_HISTORY="${INPUT_ALLURE_HISTORY}/${INPUT_SUBFOLDER}"
+    echo "NEW allure history folder ${INPUT_ALLURE_HISTORY}"
+    mkdir -p ./${INPUT_ALLURE_HISTORY}
+    GITHUB_PAGES_WEBSITE_URL="${GITHUB_PAGES_WEBSITE_URL}/${INPUT_SUBFOLDER}"
+    echo "NEW github pages url ${GITHUB_PAGES_WEBSITE_URL}"
+fi
 
 echo "index.html"
 echo "<!DOCTYPE html><meta charset=\"utf-8\"><meta http-equiv=\"refresh\" content=\"0; URL=${GITHUB_PAGES_WEBSITE_URL}/${INPUT_GITHUB_RUN_NUM}\">" > index.html # path
