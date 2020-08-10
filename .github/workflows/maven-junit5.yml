@@ -4,9 +4,9 @@ on:
   push:
     branches-ignore:
       - '!master'
-    #paths:
-    #- 'maven-junit5/**'
-    #- '**/maven-junit5.yml'
+    paths:
+    - 'maven-junit5/**'
+    - '**/maven-junit5.yml'
 
 env:
   working_dir: ${{ github.workflow }}
