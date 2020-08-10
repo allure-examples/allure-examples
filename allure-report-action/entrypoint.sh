@@ -13,9 +13,10 @@ GITHUB_PAGES_WEBSITE_URL="https://${INPUT_GITHUB_REPO_OWNER}.github.io/${REPOSIT
 
 INPUT_ALLURE_HISTORY="${INPUT_ALLURE_HISTORY}${INPUT_SUBFOLDER}"
 echo "allure history folder ${INPUT_ALLURE_HISTORY}"
+mkdir -p ./${INPUT_ALLURE_HISTORY}
 
 echo "index.html"
-echo "<!DOCTYPE html><meta charset=\"utf-8\"><meta http-equiv=\"refresh\" content=\"0; URL=${GITHUB_PAGES_WEBSITE_URL}/${INPUT_GITHUB_RUN_NUM}\">" > index.html
+echo "<!DOCTYPE html><meta charset=\"utf-8\"><meta http-equiv=\"refresh\" content=\"0; URL=${GITHUB_PAGES_WEBSITE_URL}/${INPUT_GITHUB_RUN_NUM}\">" > index.html # path
 cat index.html
 mv ./index.html ./${INPUT_ALLURE_HISTORY}
 
