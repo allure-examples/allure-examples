@@ -20,9 +20,8 @@ if [[ ${INPUT_SUBFOLDER} != '' ]]; then
 fi
 
 echo "index.html"
-echo "<!DOCTYPE html><meta charset=\"utf-8\"><meta http-equiv=\"refresh\" content=\"0; URL=${GITHUB_PAGES_WEBSITE_URL}/${INPUT_GITHUB_RUN_NUM}\">" > index.html # path
-cat index.html
-mv ./index.html ./${INPUT_ALLURE_HISTORY}
+echo "<!DOCTYPE html><meta charset=\"utf-8\"><meta http-equiv=\"refresh\" content=\"0; URL=${GITHUB_PAGES_WEBSITE_URL}/${INPUT_GITHUB_RUN_NUM}\">" > ./${INPUT_ALLURE_HISTORY}/index.html # path
+cat ./${INPUT_ALLURE_HISTORY}/index.html+
 
 echo "executor.json"
 echo '{"name":"GitHub Actions","type":"github","reportName":"Allure Report with history",' > executor.json
@@ -34,7 +33,7 @@ cat executor.json
 mv ./executor.json ./${INPUT_ALLURE_RESULTS}
 
 echo "keep allure history"
-cp -r ./${INPUT_GH_PAGES}/last-history/. ./${INPUT_ALLURE_RESULTS}/history
+cp -r ./${INPUT_ALLURE_RESULTS}/last-history/. ./${INPUT_ALLURE_RESULTS}/history
 
 #echo "version ${INPUT_ALLURE_VERSION}"
 
