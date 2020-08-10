@@ -53,7 +53,7 @@ jobs:
           path: gh-pages
 
       - name: Test local action
-        uses: ./allure-report-action
+        uses: simple-elf/allure-report-action@v1.1
         if: always()
         #id: allure-report
         with:
