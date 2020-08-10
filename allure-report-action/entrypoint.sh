@@ -32,7 +32,7 @@ echo "\"buildName\":\"GitHub Actions Run #${INPUT_GITHUB_RUN_ID}\",\"buildOrder\
 #cat executor.json
 mv ./executor.json ./${INPUT_ALLURE_RESULTS}
 
-echo "keep allure history"
+echo "keep allure history from ${INPUT_ALLURE_HISTORY}/last-history to ${INPUT_ALLURE_RESULTS}/history"
 cp -r ./${INPUT_ALLURE_HISTORY}/last-history/. ./${INPUT_ALLURE_RESULTS}/history
 
 #echo "version ${INPUT_ALLURE_VERSION}"
@@ -43,5 +43,7 @@ allure generate --clean ${INPUT_ALLURE_RESULTS} -o ${INPUT_ALLURE_REPORT}
 #echo "listing report directory ..."
 #ls -l ${INPUT_ALLURE_REPORT}
 
+echo "copy allure-report to ${INPUT_ALLURE_HISTORY}/${INPUT_GITHUB_RUN_NUM}"
 cp -r ./${INPUT_ALLURE_REPORT}/. ./${INPUT_ALLURE_HISTORY}/${INPUT_GITHUB_RUN_NUM}
+echo "copy allure-report history to /${INPUT_ALLURE_HISTORY}/last-history"
 cp -r ./${INPUT_ALLURE_REPORT}/history/. ./${INPUT_ALLURE_HISTORY}/last-history

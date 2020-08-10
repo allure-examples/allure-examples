@@ -63,7 +63,8 @@ jobs:
           allure_history: allure-history
           subfolder: ${{ env.working_dir }}
 
-      - run: mv $(pwd)/../index.html $(pwd)/../allure-history
+      - run: cp $(pwd)/../index.html $(pwd)/../allure-history
+        #working-directory: ${{ github.workspace }}
 
       - name: Deploy report to Github Pages
         if: always()
