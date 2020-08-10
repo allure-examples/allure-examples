@@ -8,6 +8,7 @@ group 'io.qameta.allure.examples'
 version '1.0'
 
 def allureVersion = "2.13.5"
+def junit5Version = "5.6.2"
 
 compileJava.options.encoding = "UTF-8"
 compileTestJava.options.encoding = "UTF-8"
@@ -41,8 +42,8 @@ repositories {
 dependencies {
     compile('commons-io:commons-io:2.6')
 
-    compile('io.qameta.allure:allure-java-commons:2.13.3')
-    compile('org.junit.jupiter:junit-jupiter-api:5.3.0')
-    compile('org.junit.jupiter:junit-jupiter-engine:5.3.0')
-    compile('org.junit.jupiter:junit-jupiter-params:5.3.0')
+    //compile("io.qameta.allure:allure-java-commons:$allureVersion")
+    //compile("org.junit.jupiter:junit-jupiter-api:$junit5Version")
+    compile("org.junit.jupiter:junit-jupiter-engine:$junit5Version")
+    compile("org.junit.jupiter:junit-jupiter-params:$junit5Version")
 }
