@@ -1,4 +1,4 @@
-name: gradle-junit5
+name: gradle.kts-junit5
 
 on:
   push:
