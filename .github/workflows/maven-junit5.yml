@@ -63,7 +63,7 @@ jobs:
           allure_history: allure-history
           subfolder: ${{ env.working_dir }}
 
-      - run: cp $(pwd)/index.html $(pwd)/allure-history/
+      - run: sudo cp $(pwd)/index.html $(pwd)/allure-history/
         if: always()
         continue-on-error: true
         working-directory: ${{ github.workspace }}
