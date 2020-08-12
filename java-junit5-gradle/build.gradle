@@ -42,10 +42,9 @@ repositories {
 }
 
 dependencies {
-    compile('commons-io:commons-io:2.6')
+    testImplementation("io.qameta.allure:allure-java-commons:$allureVersion")
 
-    compile("io.qameta.allure:allure-java-commons:$allureVersion")
-    compile("org.junit.jupiter:junit-jupiter-api:$junit5Version")
-    compile("org.junit.jupiter:junit-jupiter-engine:$junit5Version")
-    compile("org.junit.jupiter:junit-jupiter-params:$junit5Version")
+    testImplementation("org.junit.jupiter:junit-jupiter-api:$junit5Version")
+    testImplementation("org.junit.jupiter:junit-jupiter-engine:$junit5Version")
+    testImplementation("org.junit.jupiter:junit-jupiter-params:$junit5Version")
 }
