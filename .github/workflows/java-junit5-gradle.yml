@@ -1,12 +1,12 @@
-name: gradle-junit5
+name: java-junit5-gradle
 
 on:
   push:
     branches-ignore:
       - '!master'
     paths:
-    - 'gradle-junit5/**'
-    - '**/gradle-junit5.yml'
+    - 'java-junit5-gradle/**'
+    - '**/java-junit5-gradle.yml'
 
 env:
   working_dir: ${{ github.workflow }}
@@ -36,7 +36,6 @@ jobs:
         with:
           java-version: 1.8
 
-      #- run: chmod +x ./gradlew
       - name: Install dependencies
         run: ./gradlew compileTestJava
 
@@ -64,10 +63,10 @@ jobs:
           allure_history: allure-history
           subfolder: ${{ env.working_dir }}
 
-      - run: sudo cp $(pwd)/index.html $(pwd)/allure-history/
+      - run: sudo cp $(pwd)/../index.html $(pwd)/../allure-history/
         if: always()
         continue-on-error: true
-        working-directory: ${{ github.workspace }}
+        #working-directory: ${{ github.workspace }}
 
       - name: Deploy report to Github Pages
         if: always()
