@@ -7,7 +7,7 @@ plugins {
 }
 
 group "io.qameta.allure.examples"
-version 1.0
+version 1.1
 
 val allureVersion = "2.13.5"
 val junit5Version = "5.6.2"
@@ -53,10 +53,9 @@ repositories {
 }
 
 dependencies {
-    compile("commons-io:commons-io:2.6")
+    testImplementation("io.qameta.allure:allure-java-commons:$allureVersion")
 
-    compile("io.qameta.allure:allure-java-commons:$allureVersion")
-    compile("org.junit.jupiter:junit-jupiter-api:$junit5Version")
-    compile("org.junit.jupiter:junit-jupiter-engine:$junit5Version")
-    compile("org.junit.jupiter:junit-jupiter-params:$junit5Version")
+    testImplementation("org.junit.jupiter:junit-jupiter-api:$junit5Version")
+    testImplementation("org.junit.jupiter:junit-jupiter-engine:$junit5Version")
+    testImplementation("org.junit.jupiter:junit-jupiter-params:$junit5Version")
 }
