@@ -52,7 +52,7 @@ jobs:
           ref: gh-pages
           path: gh-pages
 
-      - name: Test local action
+      - name: Allure Report action from marketplace
         uses: simple-elf/allure-report-action@v1.1
         if: always()
         #id: allure-report
@@ -63,10 +63,10 @@ jobs:
           allure_history: allure-history
           subfolder: ${{ env.working_dir }}
 
-      - run: sudo cp $(pwd)/index.html $(pwd)/allure-history/
+      - run: sudo cp $(pwd)/../index.html $(pwd)/../allure-history/
         if: always()
         continue-on-error: true
-        working-directory: ${{ github.workspace }}
+        #working-directory: ${{ github.workspace }}
 
       - name: Deploy report to Github Pages
         if: always()
