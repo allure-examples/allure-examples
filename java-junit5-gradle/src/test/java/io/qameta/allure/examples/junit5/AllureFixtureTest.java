@@ -6,7 +6,7 @@ import static io.qameta.allure.Allure.step;
 
 public class AllureFixtureTest {
 
-    //@BeforeAll
+    @BeforeAll
     public static void beforeAll() {
         step("Step inside beforeAll");
     }
@@ -31,7 +31,7 @@ public class AllureFixtureTest {
         step("Step inside afterEach");
     }
 
-    //@AfterAll
+    @AfterAll
     public static void afterAll() {
         step("Step inside afterAll");
     }
