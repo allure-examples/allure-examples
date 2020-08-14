@@ -41,4 +41,5 @@ dependencies {
     testImplementation("io.qameta.allure:allure-java-commons:$allureVersion")
 
     testImplementation("org.testng:testng:$testngVersion")
+    testImplementation("org.slf4j:slf4j-simple:1.7.30")
 }
