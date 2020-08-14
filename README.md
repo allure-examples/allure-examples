@@ -27,3 +27,6 @@
 ## java-testng-maven
 [Allure Report](https://simple-elf.github.io/allure-examples/java-testng-maven/) on GitHub Pages (auto redirect to last build)
 
+## kotlin-junit5-gradle-kts
+[Allure Report](https://simple-elf.github.io/allure-examples/kotlin-junit5-gradle-kts/) on GitHub Pages (auto redirect to last build)
+
