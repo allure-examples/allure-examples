@@ -38,6 +38,9 @@ configure<AllureExtension> {
 
 tasks.withType(Test::class) {
     ignoreFailures = true
+    useJUnit {
+
+    }
 }
 
 repositories {
