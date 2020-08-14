@@ -27,6 +27,9 @@ allure {
 
 test {
     ignoreFailures = true
+    useTestNG {
+
+    }
 }
 
 repositories {
@@ -36,7 +39,6 @@ repositories {
 
 dependencies {
     testImplementation("io.qameta.allure:allure-java-commons:$allureVersion")
-    testImplementation("io.qameta.allure:allure-testng:$allureVersion")
 
     testImplementation("org.testng:testng:$testngVersion")
 }
