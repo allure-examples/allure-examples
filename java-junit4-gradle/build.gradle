@@ -27,9 +27,6 @@ allure {
 
 test {
     ignoreFailures = true
-//    useJUnitPlatform {
-//
-//    }
 }
 
 repositories {
