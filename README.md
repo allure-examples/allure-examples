@@ -39,6 +39,6 @@
 ## java-cucumber4-jvm-gradle (testng)
 [Allure Report](https://simple-elf.github.io/allure-examples/java-cucumber4-jvm-gradle/) on GitHub Pages (auto redirect to last build)
 
-## java-cucumber5-jvm-gradle (junit4)
-[Allure Report](https://simple-elf.github.io/allure-examples/java-cucumber5-jvm-gradle/) on GitHub Pages (auto redirect to last build)
+## java-cucumber5-jvm-gradle-kts (junit4)
+[Allure Report](https://simple-elf.github.io/allure-examples/java-cucumber5-jvm-gradle-kts/) on GitHub Pages (auto redirect to last build)
 
