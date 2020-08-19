@@ -5,7 +5,7 @@ plugins {
 }
 
 group 'io.qameta.allure.examples'
-version '1.1'
+version '1.0'
 
 def allureVersion = "2.13.5"
 def testngVersion = "6.14.3"
@@ -15,15 +15,11 @@ compileJava.options.encoding = "UTF-8"
 compileTestJava.options.encoding = "UTF-8"
 
 allure {
-    autoconfigure = true
+    autoconfigure = false
     aspectjweaver = true
     version = allureVersion
 
     clean = true
-
-    useTestNG {
-        version = allureVersion
-    }
 }
 
 test {
@@ -31,6 +27,7 @@ test {
     useTestNG {
 
     }
+    scanForTestClasses = false
 }
 
 repositories {
@@ -42,6 +39,7 @@ dependencies {
     testImplementation("io.qameta.allure:allure-cucumber4-jvm:$allureVersion")
 
     testImplementation("io.cucumber:cucumber-testng:$cucumberVersion")
+    testImplementation("io.cucumber:cucumber-java:$cucumberVersion")
 
     testImplementation("org.testng:testng:$testngVersion")
     testImplementation("org.slf4j:slf4j-simple:1.7.30")
