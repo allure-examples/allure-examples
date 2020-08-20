@@ -32,6 +32,12 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Check code style
+        if: always()
+        run: |
+          flake8
+          pylint ./test
+
       - name: Run Test
         if: always()
         run: pytest --alluredir=allure-results

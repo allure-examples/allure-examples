@@ -1,5 +1,6 @@
 import allure
 
+
 @allure.title("test_allure_simple_test displayName")
 def test_allure_simple_test():
     with allure.step("Simple step"):
