@@ -2,8 +2,8 @@ name: python-pytest
 
 on:
   push:
-#    branches-ignore:
-#      - '!master'
+    branches-ignore:
+      - '!master'
     paths:
     - 'python-pytest/**'
     - '**/python-pytest.yml'
