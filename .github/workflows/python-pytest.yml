@@ -2,11 +2,11 @@ name: python-pytest
 
 on:
   push:
-    branches-ignore:
-      - '!master'
+#    branches-ignore:
+#      - '!master'
     paths:
-    - 'java-testng-gradle/**'
-    - '**/java-testng-gradle.yml'
+    - 'python-pytest/**'
+    - '**/python-pytest.yml'
 
 env:
   working_dir: ${{ github.workflow }}
