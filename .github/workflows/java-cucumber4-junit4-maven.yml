@@ -1,12 +1,12 @@
-name: java-cucumber4-jvm-maven
+name: java-cucumber4-junit4-maven
 
 on:
   push:
     branches-ignore:
       - '!master'
     paths:
-    - 'java-cucumber4-jvm-maven/**'
-    - '**/java-cucumber4-jvm-maven.yml'
+    - 'java-cucumber4-junit4-maven/**'
+    - '**/java-cucumber4-junit4-maven.yml'
 
 env:
   working_dir: ${{ github.workflow }}

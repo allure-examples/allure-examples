@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>io.qameta.allure.examples</groupId>
-    <artifactId>java-cucumber4-jvm-maven</artifactId>
+    <artifactId>java-cucumber4-junit4-maven</artifactId>
     <version>1.0</version>
 
     <properties>
