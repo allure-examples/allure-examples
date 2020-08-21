@@ -1,12 +1,12 @@
-name: java-cucumber4-jvm-gradle
+name: java-cucumber4-testng-gradle
 
 on:
   push:
     branches-ignore:
       - '!master'
     paths:
-    - 'java-cucumber4-jvm-gradle/**'
-    - '**/java-cucumber4-jvm-gradle.yml'
+    - 'java-cucumber4-testng-gradle/**'
+    - '**/java-cucumber4-testng-gradle.yml'
 
 env:
   working_dir: ${{ github.workflow }}
