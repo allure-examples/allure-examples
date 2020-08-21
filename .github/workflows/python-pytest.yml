@@ -1,0 +1,76 @@
+name: python-pytest
+
+on:
+  push:
+    branches-ignore:
+      - '!master'
+    paths:
+    - 'python-pytest/**'
+    - '**/python-pytest.yml'
+
+env:
+  working_dir: ${{ github.workflow }}
+
+jobs:
+  autotests:
+    name: Generate Allure Report
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        #shell: bash
+        working-directory: ${{ env.working_dir }}
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Python 3.x
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Check code style
+        if: always()
+        run: |
+          flake8
+          pylint ./test
+
+      - name: Run Test
+        if: always()
+        run: pytest --alluredir=allure-results
+        continue-on-error: true
+
+      - name: Get Allure history
+        uses: actions/checkout@v2
+        if: always()
+        continue-on-error: true
+        with:
+          ref: gh-pages
+          path: gh-pages
+
+      - name: Allure Report action from marketplace
+        uses: simple-elf/allure-report-action@v1.1
+        if: always()
+        #id: allure-report
+        with:
+          allure_results: ${{ env.working_dir }}/allure-results
+          #gh_pages: gh-pages
+          #allure_report: allure-report
+          allure_history: allure-history
+          subfolder: ${{ env.working_dir }}
+
+      - run: sudo cp $(pwd)/../index.html $(pwd)/../allure-history/
+        if: always()
+        continue-on-error: true
+        #working-directory: ${{ github.workspace }}
+
+      - name: Deploy report to Github Pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v2
+        env:
+          PERSONAL_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          PUBLISH_BRANCH: gh-pages
+          PUBLISH_DIR: allure-history
