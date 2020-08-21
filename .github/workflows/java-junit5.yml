@@ -61,6 +61,7 @@ jobs:
       - name: Copy files
         run: sudo cp -r $(pwd)/../${{ env.working_dir }}/. $(pwd)/../gradle-kts
       - run: ls -a $(pwd)/../gradle-kts/
+      - run: sudo rm -r java-junit5
 
       - uses: autosuite/autocommit@master
         with:
