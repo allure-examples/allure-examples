@@ -1,12 +1,12 @@
-name: java-cucumber5-jvm-gradle-kts
+name: java-cucumber5-junit4-gradle-kts
 
 on:
   push:
     branches-ignore:
       - '!master'
     paths:
-    - 'java-cucumber5-jvm-gradle-kts/**'
-    - '**/java-cucumber5-jvm-gradle-kts.yml'
+    - 'java-cucumber5-junit4-gradle-kts/**'
+    - '**/java-cucumber5-junit4-gradle-kts.yml'
 
 env:
   working_dir: ${{ github.workflow }}
