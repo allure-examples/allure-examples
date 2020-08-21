@@ -33,12 +33,12 @@
 ## java-cucumber4-junit4-maven
 [Allure Report](https://simple-elf.github.io/allure-examples/java-cucumber4-junit4-maven/) on GitHub Pages (auto redirect to last build)
 
-## java-cucumber5-jvm-maven (testng)
-[Allure Report](https://simple-elf.github.io/allure-examples/java-cucumber5-jvm-maven/) on GitHub Pages (auto redirect to last build)
+## java-cucumber5-testng-maven
+[Allure Report](https://simple-elf.github.io/allure-examples/java-cucumber5-testng-maven/) on GitHub Pages (auto redirect to last build)
 
 ## java-cucumber4-testng-gradle
 [Allure Report](https://simple-elf.github.io/allure-examples/java-cucumber4-testng-gradle/) on GitHub Pages (auto redirect to last build)
 
-## java-cucumber5-jvm-gradle-kts (junit4)
-[Allure Report](https://simple-elf.github.io/allure-examples/java-cucumber5-jvm-gradle-kts/) on GitHub Pages (auto redirect to last build)
+## java-cucumber5-junit4-gradle-kts
+[Allure Report](https://simple-elf.github.io/allure-examples/java-cucumber5-junit4-gradle-kts/) on GitHub Pages (auto redirect to last build)
 
