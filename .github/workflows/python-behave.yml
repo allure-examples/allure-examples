@@ -1,4 +1,4 @@
-name: python-pytest
+name: python-behave
 
 on:
   push:
