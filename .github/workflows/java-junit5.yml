@@ -54,39 +54,22 @@ jobs:
         continue-on-error: true
         with:
           repository: simple-elf/java-junit5-gradle-kts
-          #ref: gh-pages
           path: gradle-kts
+          persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal token
+          fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
 
       - name: Copy files
         run: sudo cp -r $(pwd)/../${{ env.working_dir }}/ $(pwd)/../gradle-kts/
+      - run: ls -a $(pwd)/../gradle-kts/
 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+      - uses: autosuite/autocommit@master
         with:
-          deploy_key: ${{ secrets.ACCESS_TOKEN }}
-          external_repository: simple-elf/java-junit5-gradle-kts
-          publish_branch: master
-          publish_dir: ./gradle-kts
+          commit-message: Commit form GitHub Action
+          add-options: -A
 
-#      - name: Commit files
-#        run: |
-#          git config --local user.email "action@github.com"
-#          git config --local user.name "GitHub Action"
-#          git commit -m "GitHub Action commit" -a
-
-#      - name: Commit changes
-#        uses: EndBug/add-and-commit@v4
-#        with:
-#          author_name: GitHub Action
-#          author_email: action@github.com
-#          #message: "Your commit message"
-#          #add: "*.js"
-#        env:
-#          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-
-#      - name: Push changes
-#        uses: ad-m/github-push-action@master
-#        with:
-#          github_token: ${{ secrets.ACCESS_TOKEN }}
-#          repository: simple-elf/java-junit5-gradle-kts
-#          directory: gradle-kts
+      - name: Push changes
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          github_token: ${{ secrets.ACCESS_TOKEN }}
+          repository: simple-elf/java-junit5-gradle-kts
+          directory: gradle-kts
