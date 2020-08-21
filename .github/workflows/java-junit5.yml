@@ -60,11 +60,19 @@ jobs:
       - name: Copy files
         run: sudo cp -r $(pwd)/../${{ env.working_dir }}/ $(pwd)/../gradle-kts/
 
-      - name: Commit files
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git commit -m "GitHub Action commit" -a
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          deploy_key: ${{ secrets.ACCESS_TOKEN }}
+          external_repository: simple-elf/java-junit5-gradle-kts
+          publish_branch: master
+          publish_dir: ./gradle-kts
+
+#      - name: Commit files
+#        run: |
+#          git config --local user.email "action@github.com"
+#          git config --local user.name "GitHub Action"
+#          git commit -m "GitHub Action commit" -a
 
 #      - name: Commit changes
 #        uses: EndBug/add-and-commit@v4
@@ -76,9 +84,9 @@ jobs:
 #        env:
 #          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
 
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.ACCESS_TOKEN }}
-          repository: simple-elf/java-junit5-gradle-kts
-          directory: gradle-kts
+#      - name: Push changes
+#        uses: ad-m/github-push-action@master
+#        with:
+#          github_token: ${{ secrets.ACCESS_TOKEN }}
+#          repository: simple-elf/java-junit5-gradle-kts
+#          directory: gradle-kts
