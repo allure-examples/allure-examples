@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>io.qameta.allure.examples</groupId>
-    <artifactId>java-cucumber5-jvm-maven</artifactId>
+    <artifactId>java-cucumber5-testng-maven</artifactId>
     <version>1.0</version>
 
     <properties>
