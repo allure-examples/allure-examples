@@ -63,14 +63,12 @@ jobs:
       - run: ls -a $(pwd)/../gradle-kts/
 
       - uses: autosuite/autocommit@master
-        working-directory: gradle-kts
         with:
           commit-message: Commit form GitHub Action
           add-options: -A
 
       - name: Push changes
         uses: ad-m/github-push-action@v0.6.0
-        working-directory: gradle-kts
         with:
           github_token: ${{ secrets.ACCESS_TOKEN }}
           repository: simple-elf/java-junit5-gradle-kts
