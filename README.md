@@ -42,3 +42,9 @@
 ## java-cucumber5-jvm-gradle-kts (junit4)
 [Allure Report](https://simple-elf.github.io/allure-examples/java-cucumber5-jvm-gradle-kts/) on GitHub Pages (auto redirect to last build)
 
+## python-pytest
+[Allure Report](https://simple-elf.github.io/allure-examples/python-pytest/) on GitHub Pages (auto redirect to last build)
+
+## python-behave
+[Allure Report](https://simple-elf.github.io/allure-examples/python-behave/) on GitHub Pages (auto redirect to last build)
+
