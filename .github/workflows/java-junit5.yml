@@ -54,6 +54,7 @@ jobs:
           #ref: gh-pages
           path: gradle-kts
 
+      - run: ls -a
       - name: Copy files
         run: sudo cp -r ${{ env.working_dir }}/ gradle-kts/
 
