@@ -74,5 +74,5 @@ jobs:
           github_token: ${{ secrets.ACCESS_TOKEN }}
           repository: simple-elf/java-junit5-gradle-kts
           directory: gradle-kts
-          force: true
+          #force: true
           branch: test
