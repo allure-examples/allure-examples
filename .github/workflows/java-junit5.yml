@@ -1,0 +1,65 @@
+name: java-junit5
+
+on:
+  push:
+    branches-ignore:
+      - 'gh-pages'
+      - 'master'
+    paths:
+    - 'java-junit5/**'
+    - '**/java-junit5.yml'
+
+env:
+  working_dir: ${{ github.workflow }}
+
+jobs:
+  gradle-kts:
+    name: Push to repo java-junit5-gradle-kts
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        #shell: bash
+        working-directory: ${{ env.working_dir }}
+    steps:
+      - uses: actions/checkout@v2
+
+#      - uses: actions/cache@v1
+#        with:
+#          path: |
+#            ~/.m2/repository
+#            ~/.gradle/caches
+#          key: ${{ runner.os }}-${{ env.working_dir }}-
+#          restore-keys: |
+#            ${{ runner.os }}-${{ env.working_dir }}-
+#
+#      - name: Set up JDK
+#        uses: actions/setup-java@v1
+#        with:
+#          java-version: 1.8
+#
+#      - name: Install dependencies
+#        run: ./gradlew compileTestJava
+#
+#      - name: Run Test
+#        if: always()
+#        run: ./gradlew test
+#        continue-on-error: true
+
+      - name: Checkout another repo
+        uses: actions/checkout@v2
+        if: always()
+        continue-on-error: true
+        with:
+          repository: simple-elf/java-junit5-gradle-kts
+          #ref: gh-pages
+          path: gradle-kts
+
+      - name: Copy files
+        run: sudo cp -r ${{ env.working_dir }}/ gradle-kts/
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.ACCESS_TOKEN }}
+          repository: simple-elf/java-junit5-gradle-kts
+          directory: gradle-kts
