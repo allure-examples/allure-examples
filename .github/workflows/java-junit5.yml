@@ -48,28 +48,31 @@ jobs:
 #        run: ./gradlew test
 #        continue-on-error: true
 
-      - name: Checkout another repo
-        uses: actions/checkout@v2
-        if: always()
-        continue-on-error: true
-        with:
-          repository: simple-elf/java-junit5-gradle-kts
-          path: gradle-kts
-          persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal token
-          fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
+#      - name: Checkout another repo
+#        uses: actions/checkout@v2
+#        if: always()
+#        continue-on-error: true
+#        with:
+#          repository: simple-elf/java-junit5-gradle-kts
+#          path: gradle-kts
+#          persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal token
+#          fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
 
       - name: Copy files
-        run: sudo cp -r $(pwd)/../${{ env.working_dir }}/ $(pwd)/../gradle-kts/
+        run: sudo cp -r $(pwd)/../${{ env.working_dir }}/. $(pwd)/../gradle-kts
       - run: ls -a $(pwd)/../gradle-kts/
 
       - uses: autosuite/autocommit@master
+        working-directory: gradle-kts
         with:
           commit-message: Commit form GitHub Action
           add-options: -A
 
       - name: Push changes
         uses: ad-m/github-push-action@v0.6.0
+        working-directory: gradle-kts
         with:
           github_token: ${{ secrets.ACCESS_TOKEN }}
           repository: simple-elf/java-junit5-gradle-kts
-          directory: gradle-kts
+          #directory: gradle-kts
+          force: true
