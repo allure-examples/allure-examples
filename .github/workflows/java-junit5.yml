@@ -61,7 +61,7 @@ jobs:
       - name: Copy files
         run: sudo cp -r $(pwd)/../${{ env.working_dir }}/. $(pwd)/../gradle-kts
       - run: ls -a $(pwd)/../gradle-kts/
-      - run: sudo rm -r $(pwd)/../java-junit5
+      - run: sudo rm -r $(pwd)/../java-junit5-maven
 
       - uses: autosuite/autocommit@master
         with:
@@ -73,6 +73,6 @@ jobs:
         with:
           github_token: ${{ secrets.ACCESS_TOKEN }}
           repository: simple-elf/java-junit5-gradle-kts
-          directory: $(pwd)/gradle-kts
+          directory: gradle-kts
           force: true
           branch: test
