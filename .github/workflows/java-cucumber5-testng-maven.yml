@@ -1,12 +1,12 @@
-name: java-cucumber5-jvm-maven
+name: java-cucumber5-testng-maven
 
 on:
   push:
     branches-ignore:
       - '!master'
     paths:
-    - 'java-cucumber5-jvm-maven/**'
-    - '**/java-cucumber5-jvm-maven.yml'
+    - 'java-cucumber5-testng-maven/**'
+    - '**/java-cucumber5-testng-maven.yml'
 
 env:
   working_dir: ${{ github.workflow }}
