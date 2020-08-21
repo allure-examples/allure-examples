@@ -54,9 +54,8 @@ jobs:
           #ref: gh-pages
           path: gradle-kts
 
-      - run: ls -a
       - name: Copy files
-        run: sudo cp -r ${{ env.working_dir }}/ gradle-kts/
+        run: sudo cp -r $(pwd)/../${{ env.working_dir }}/ $(pwd)/../gradle-kts/
 
       - name: Push changes
         uses: ad-m/github-push-action@master
