@@ -6,4 +6,4 @@ const reporter = new JasmineAllureReporter(allure);
 
 jasmine.getEnv().addReporter(reporter);
 
-module.exports.allure = reporter.getInterface();
+global.allure = reporter.getInterface();
