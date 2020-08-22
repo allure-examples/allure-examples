@@ -1,12 +1,12 @@
-name: js-cucumber
+name: js-cucumberjs
 
 on:
   push:
     branches-ignore:
       - '!master'
     paths:
-    - 'js-cucumber/**'
-    - '**/js-cucumber.yml'
+    - 'js-cucumberjs/**'
+    - '**/js-cucumberjs.yml'
 
 env:
   working_dir: ${{ github.workflow }}

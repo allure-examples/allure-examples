@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "description": "Allure jset examples",
   "author": "Stanislav Seliverstov <s.seliverstov@gmail.com>",
-  "repository": "https://github.com/simple-elf/allure-examples/js-cucumber",
+  "repository": "https://github.com/simple-elf/allure-examples/js-cucumberjs",
   "license": "Apache-2.0",
   "scripts": {
     "test": "cucumber-js --format ./features/support/report.js",
