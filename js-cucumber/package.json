@@ -7,7 +7,7 @@
   "repository": "https://github.com/simple-elf/allure-examples/js-cucumber",
   "license": "Apache-2.0",
   "scripts": {
-
+    "test": "cucumber-js --format ./features/support/report.js"
   },
   "devDependencies": {
     "cucumber": "^6.0.5",
