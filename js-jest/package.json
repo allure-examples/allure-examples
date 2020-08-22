@@ -1,0 +1,14 @@
+{
+  "name": "js-jest",
+  "version": "1.0.0",
+  "description": "Allure jset examples",
+  "author": "Stanislav Seliverstov <s.seliverstov@gmail.com>",
+  "license": "Apache-2.0",
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {
+    "allure-jasmine": "^2.0.0-beta.7",
+    "jest": "^26.4.1"
+  }
+}
