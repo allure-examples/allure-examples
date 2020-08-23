@@ -81,6 +81,8 @@ jobs:
         uses: actions-js/push@master
         with:
           github_token: ${{ secrets.ACCESS_TOKEN }}
+          author_email: github@github.com
+          author_name: GitHub Actions
           force: true
           directory: gradle-kts
           repository: simple-elf/java-junit5-gradle-kts
