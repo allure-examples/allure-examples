@@ -48,18 +48,17 @@ jobs:
 #        if: always()
 #        run: ./gradlew test
 #        continue-on-error: true
-
+      - run: mkdir -p gradle-kts
       - name: Copy files
-        run: sudo cp -r ${{ env.working_dir }}/. ./gradle-kts
+        run: cp -r ${{ env.working_dir }}/. ./gradle-kts
 #      - run: ls -a $(pwd)/../gradle-kts/
 #      - run: sudo rm -r $(pwd)/../java-junit5-maven
 
-#      - run: mkdir -p gradle-kts
 #      - run: echo 111233 > gradle-kts/file.txt
 #      - run: ls -l
       - run: ls -l gradle-kts
 
-      - run: sudo git init
+      - run: git init
         working-directory: gradle-kts
 
       - name: Push
