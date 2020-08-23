@@ -59,7 +59,7 @@ jobs:
 #      - run: ls -l
       - run: ls -l gradle-kts
 
-      - run: git init
+      - run: sudo git init
         working-directory: gradle-kts
 
       - name: Push
