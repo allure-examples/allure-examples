@@ -70,11 +70,11 @@ jobs:
 #        run: sudo cp -r $(pwd)/../${{ env.working_dir }}/. $(pwd)/../gradle-kts
 #      - run: ls -a $(pwd)/../gradle-kts/
 #      - run: sudo rm -r $(pwd)/../java-junit5-maven
-      #- run: mkdir -p gradle-kts
+      - run: mkdir -p gradle-kts
       - run: touch file.txt
-      - run: echo 111 >> file.txt
+      - run: echo 1112 >> file.txt
       - run: ls -l
-      #- run: ls -l gradle-kts
+      - run: ls -l gradle-kts
       - run: git init
         #working-directory: gradle-kts
 
@@ -88,6 +88,6 @@ jobs:
         with:
           github_token: ${{ secrets.ACCESS_TOKEN }}
           repository: simple-elf/java-junit5-gradle-kts
-          #directory: gradle-kts
+          directory: gradle-kts
           force: true
           branch: test
