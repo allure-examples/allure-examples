@@ -32,7 +32,7 @@ jobs:
         run: cp -r ${{ env.working_dir }}/. ./gradle-kts
       - run: rm ./gradle-kts/build.gradle
       - run: rm ./gradle-kts/pom.xml
-      - run: cp -r .github/workflows/java-junit5-gradle-kts.yml ./gradle-kts/.github/workflows
+      - run: mkdir -p ./gradle-kts/.github/workflows && cp -r ./.github/workflows/java-junit5-gradle-kts.yml "$_"
 
       - run: ls -l gradle-kts
 
