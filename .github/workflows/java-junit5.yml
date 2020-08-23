@@ -22,9 +22,9 @@ jobs:
 #        working-directory: ${{ env.working_dir }}
     steps:
       - uses: actions/checkout@v2
-        #with:
+        with:
           #path: ${{ env.working_dir }}
-          #persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal token
+          persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal token
           #fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
 #
 #      - uses: actions/checkout@v2
@@ -81,8 +81,8 @@ jobs:
         uses: actions-js/push@master
         with:
           github_token: ${{ secrets.ACCESS_TOKEN }}
-          author_email: github@github.com
-          author_name: GitHub Actions
+          author_email: 'github@github.com'
+          author_name: 'GitHub Actions'
           force: true
           directory: gradle-kts
           repository: simple-elf/java-junit5-gradle-kts
