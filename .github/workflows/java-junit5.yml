@@ -17,13 +17,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-#        with:
-#          persist-credentials: false
+        with:
+          persist-credentials: false
 
       - name: Copy needed files
         run: |
           cp -r ${{ env.working_dir }}/. ./gradle-kts
-          rm ./gradle-kts/build.gradle ./gradle-kts/pom.xml ./gradle-kts/.github/workflows/java-junit5-gradle.yml
+          rm ./gradle-kts/pom.xml ./gradle-kts/build.gradle ./gradle-kts/.github/workflows/${{ env.working_dir }}-gradle.yml
           ls -l gradle-kts
 
       - run: git init
@@ -32,7 +32,7 @@ jobs:
       - name: Push
         uses: actions-js/push@master
         with:
-          repository: simple-elf/java-junit5-gradle-kts
+          repository: simple-elf/${{ env.working_dir }}-gradle-kts
           directory: gradle-kts
           force: true
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -48,7 +48,7 @@ jobs:
       - name: Copy needed files
         run: |
           cp -r ${{ env.working_dir }}/. ./gradle
-          rm ./gradle/build.gradle.kts ./gradle/pom.xml ./gradle-kts/.github/workflows/java-junit5-gradle-kts.yml
+          rm ./gradle/pom.xml ./gradle/build.gradle.kts ./gradle/.github/workflows/${{ env.working_dir }}-gradle-kts.yml
           ls -l gradle
 
       - run: git init
@@ -57,7 +57,7 @@ jobs:
       - name: Push
         uses: actions-js/push@master
         with:
-          repository: simple-elf/java-junit5-gradle
+          repository: simple-elf/${{ env.working_dir }}-gradle
           directory: gradle
           force: true
           github_token: ${{ secrets.GITHUB_TOKEN }}
