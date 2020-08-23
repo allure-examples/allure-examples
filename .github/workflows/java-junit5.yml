@@ -77,16 +77,14 @@ jobs:
       #- run: git init
       #  working-directory: gradle-kts
 
-      - uses: actions-go/push@master
+      - name: Push
+        uses: actions-js/push@master
         with:
-          author-email: GitHub@GitHub.
-          author-name: GitHub Action
-          commit-files: gradle-kts
-          commit-message: 'Commit form GitHub Action'
-          remote: simple-elf/java-junit5-gradle-kts
-          remote-ref: test
-          token: ${{ secrets.ACCESS_TOKEN }}
+          github_token: ${{ secrets.ACCESS_TOKEN }}
           force: true
+          directory: gradle-kts
+          repository: simple-elf/java-junit5-gradle-kts
+          branch: test
 
 #      - uses: autosuite/autocommit@master
 #        with:
