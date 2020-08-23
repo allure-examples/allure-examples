@@ -35,7 +35,7 @@ jobs:
           repository: simple-elf/${{ env.working_dir }}-gradle-kts
           directory: gradle-kts
           force: true
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.ACCESS_TOKEN }}
 
   gradle:
     name: Push to repo java-junit5-gradle
@@ -60,7 +60,7 @@ jobs:
           repository: simple-elf/${{ env.working_dir }}-gradle
           directory: gradle
           force: true
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.ACCESS_TOKEN }}
 
 #  maven:
 #    name: Push to repo ${{ env.working_dir }}-maven
