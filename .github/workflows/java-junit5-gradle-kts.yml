@@ -65,7 +65,7 @@ jobs:
           allure_history: allure-history
           subfolder: ${{ env.working_dir }}
 
-      - run: cp ./index.html ./allure-history/
+      - run: sudo cp ./index.html ./allure-history/
         if: always()
 
       - name: Deploy report to Github Pages
