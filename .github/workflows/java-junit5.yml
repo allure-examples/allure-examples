@@ -1,0 +1,51 @@
+name: java-junit5
+
+on:
+  push:
+    branches-ignore:
+      - 'gh-pages'
+      - 'master'
+    paths:
+    - 'java-junit5/**'
+    - '**/java-junit5.yml'
+
+env:
+  working_dir: ${{ github.workflow }}
+
+jobs:
+  gradle-kts:
+    name: Push to repo java-junit5-gradle-kts
+    runs-on: ubuntu-latest
+#    defaults:
+#      run:
+#        #shell: bash
+#        working-directory: ${{ env.working_dir }}
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          #path: ${{ env.working_dir }}
+          persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal token
+          #fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
+
+      #- run: mkdir -p gradle-kts
+      - name: Copy files
+        run: cp -r ${{ env.working_dir }}/. ./gradle-kts
+      - run: rm ./gradle-kts/build.gradle
+      - run: rm ./gradle-kts/pom.xml
+      - run: mkdir -p ./gradle-kts/.github/workflows && cp -r ./.github/workflows/java-junit5-gradle-kts.yml "$_"
+
+      - run: ls -l gradle-kts
+
+      - run: git init
+        working-directory: gradle-kts
+
+      - name: Push
+        uses: actions-js/push@master
+        with:
+          github_token: ${{ secrets.ACCESS_TOKEN }}
+          #author_email: 'github@github.com'
+          #author_name: 'GitHub Actions'
+          force: true
+          directory: gradle-kts
+          repository: simple-elf/java-junit5-gradle-kts
+          #branch: master

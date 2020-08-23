@@ -1,7 +1,8 @@
 # Allure Examples
 
-## java-junit5-gradle ![java-junit5-gradle](https://github.com/simple-elf/allure-examples/workflows/java-junit5-gradle/badge.svg)
-[Allure Report](https://simple-elf.github.io/allure-examples/java-junit5-gradle/) on GitHub Pages (auto redirect to last build)
+![java-junit5-gradle](https://github.com/simple-elf/allure-examples/workflows/java-junit5-gradle/badge.svg)
+[![Allure Report](https://img.shields.io/badge/Allure%20Report-published-yellowgreen)](https://simple-elf.github.io/allure-examples/java-junit5-gradle/)
+
 
 ## java-junit5-gradle-kts ![java-junit5-gradle-kts](https://github.com/simple-elf/allure-examples/workflows/java-junit5-gradle-kts/badge.svg)
 [Allure Report](https://simple-elf.github.io/allure-examples/java-junit5-gradle-kts/) on GitHub Pages (auto redirect to last build)
