@@ -74,19 +74,30 @@ jobs:
       - run: echo 111233 > gradle-kts/file.txt
       - run: ls -l
       - run: ls -l gradle-kts
-      - run: git init
-        working-directory: gradle-kts
+      #- run: git init
+      #  working-directory: gradle-kts
 
-      - uses: autosuite/autocommit@master
+      - uses: actions-go/push@master
         with:
-          commit-message: Commit form GitHub Action
-          add-options: ./gradle-kts
-
-      - name: Push changes
-        uses: ad-m/github-push-action@v0.6.0
-        with:
-          github_token: ${{ secrets.ACCESS_TOKEN }}
-          repository: simple-elf/java-junit5-gradle-kts
-          directory: gradle-kts
+          author-email: GitHub@GitHub.
+          author-name: GitHub Action
+          commit-files: gradle-kts
+          commit-message: 'Commit form GitHub Action'
+          remote: simple-elf/java-junit5-gradle-kts
+          remote-ref: test
+          token: ${{ secrets.ACCESS_TOKEN }}
           force: true
-          branch: test
+
+#      - uses: autosuite/autocommit@master
+#        with:
+#          commit-message: Commit form GitHub Action
+#          add-options: ./gradle-kts
+#
+#      - name: Push changes
+#        uses: ad-m/github-push-action@v0.6.0
+#        with:
+#          github_token: ${{ secrets.ACCESS_TOKEN }}
+#          repository: simple-elf/java-junit5-gradle-kts
+#          directory: gradle-kts
+#          force: true
+#          branch: test
