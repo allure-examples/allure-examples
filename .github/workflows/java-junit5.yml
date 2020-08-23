@@ -22,18 +22,19 @@ jobs:
 
       - name: Copy needed files
         run: |
-          cp -r ${{ env.working_dir }}/. ./gradle-kts
-          rm ./gradle-kts/pom.xml ./gradle-kts/build.gradle ./gradle-kts/.github/workflows/${{ env.working_dir }}-gradle.yml
-          ls -l gradle-kts
+          cp -r ${{ env.working_dir }}/. ./result
+          rm ./result/pom.xml ./result/.github/workflows/${{ env.working_dir }}-maven.yml
+          rm ./result/build.gradle ./result/.github/workflows/${{ env.working_dir }}-gradle.yml
+          ls -l result
 
       - run: git init
-        working-directory: gradle-kts
+        working-directory: result
 
       - name: Push
         uses: actions-js/push@master
         with:
           repository: simple-elf/${{ env.working_dir }}-gradle-kts
-          directory: gradle-kts
+          directory: result
           force: true
           github_token: ${{ secrets.ACCESS_TOKEN }}
 
@@ -47,42 +48,45 @@ jobs:
 
       - name: Copy needed files
         run: |
-          cp -r ${{ env.working_dir }}/. ./gradle
-          rm ./gradle/pom.xml ./gradle/build.gradle.kts ./gradle/.github/workflows/${{ env.working_dir }}-gradle-kts.yml
-          ls -l gradle
+          cp -r ${{ env.working_dir }}/. ./result
+          rm ./result/pom.xml ./result/.github/workflows/${{ env.working_dir }}-maven.yml
+          rm ./result/build.gradle.kts ./result/.github/workflows/${{ env.working_dir }}-gradle-kts.yml
+          ls -l result
 
       - run: git init
-        working-directory: gradle
+        working-directory: result
 
       - name: Push
         uses: actions-js/push@master
         with:
           repository: simple-elf/${{ env.working_dir }}-gradle
-          directory: gradle
+          directory: result
           force: true
           github_token: ${{ secrets.ACCESS_TOKEN }}
 
-#  maven:
-#    name: Push to repo ${{ env.working_dir }}-maven
-#    runs-on: ubuntu-latest
-#    steps:
-#      - uses: actions/checkout@v2
-#        with:
-#          persist-credentials: false
-#
-#      - name: Copy needed files
-#        run: |
-#          cp -r ${{ env.working_dir }}/. ./maven
-#          rm ./maven/build.gradle.kts ./maven/build.gradle
-#          ls -l maven
-#
-#      - run: git init
-#        working-directory: maven
-#
-#      - name: Push
-#        uses: actions-js/push@master
-#        with:
-#          repository: simple-elf/java-junit5-gradle
-#          directory: maven
-#          force: true
-#          github_token: ${{ secrets.GITHUB_TOKEN }}
+  maven:
+    name: Push to repo java-junit5-maven
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      - name: Copy needed files
+        run: |
+          cp -r ${{ env.working_dir }}/. ./result
+          rm ./result/build.gradle ./result/.github/workflows/${{ env.working_dir }}-gradle.yml
+          rm ./result/build.gradle.kts ./result/.github/workflows/${{ env.working_dir }}-gradle-kts.yml
+          rm -r ./result/gradle ./result/gradlew ./result/gradlew.bat
+          ls -l result
+
+      - run: git init
+        working-directory: result
+
+      - name: Push
+        uses: actions-js/push@master
+        with:
+          repository: simple-elf/java-junit5-maven
+          directory: result
+          force: true
+          github_token: ${{ secrets.ACCESS_TOKEN }}
