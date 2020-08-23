@@ -80,7 +80,7 @@ jobs:
       - uses: autosuite/autocommit@master
         with:
           commit-message: Commit form GitHub Action
-          add-options: gradle-kts
+          add-options: ./gradle-kts
 
       - name: Push changes
         uses: ad-m/github-push-action@v0.6.0
