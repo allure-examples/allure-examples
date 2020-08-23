@@ -47,6 +47,12 @@ Allure Report links auto redirect to the last build
 ![python-pytest](https://github.com/simple-elf/allure-examples/workflows/python-pytest/badge.svg)
 [![Allure Report](https://img.shields.io/badge/Allure%20Report-published-yellowgreen)](https://simple-elf.github.io/allure-examples/python-pytest/)
 
-![python-behave](https://github.com/simple-elf/allure-examples/workflows/python-behave/badge.svg)
-[![Allure Report](https://img.shields.io/badge/Allure%20Report-published-yellowgreen)](https://simple-elf.github.io/allure-examples/python-behave/)
+![js-jest](https://github.com/simple-elf/allure-examples/workflows/js-jest/badge.svg)
+[![Allure Report](https://img.shields.io/badge/Allure%20Report-published-yellowgreen)](https://simple-elf.github.io/allure-examples/js-jest/)
+
+![js-cucumberjs](https://github.com/simple-elf/allure-examples/workflows/js-cucumberjs/badge.svg)
+[![Allure Report](https://img.shields.io/badge/Allure%20Report-published-yellowgreen)](https://simple-elf.github.io/allure-examples/js-cucumberjs/)
+
+![js-codeceptjs](https://github.com/simple-elf/allure-examples/workflows/js-codeceptjs/badge.svg)
+[![Allure Report](https://img.shields.io/badge/Allure%20Report-published-yellowgreen)](https://simple-elf.github.io/allure-examples/js-codeceptjs/)
 
