@@ -1,0 +1,18 @@
+{
+  "private": true,
+  "name": "js-cucumber",
+  "version": "1.0.0",
+  "description": "Allure jset examples",
+  "author": "Stanislav Seliverstov <s.seliverstov@gmail.com>",
+  "repository": "https://github.com/simple-elf/allure-examples/ts-codeceptjs-ts_node",
+  "license": "Apache-2.0",
+  "scripts": {
+    "test": "npm run def && TS_NODE_PROJECT=./tsconfig.json codeceptjs run --plugins allure",
+    "def": "mkdir -p ./_typings && TS_NODE_PROJECT=./tsconfig.json codeceptjs def --output=./_typings"
+  },
+  "devDependencies": {
+    "codeceptjs": "^2.6.9",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.2"
+  }
+}
