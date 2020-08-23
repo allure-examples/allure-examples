@@ -16,10 +16,10 @@ jobs:
   gradle-kts:
     name: Push to repo java-junit5-gradle-kts
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        #shell: bash
-        working-directory: ${{ env.working_dir }}
+#    defaults:
+#      run:
+#        #shell: bash
+#        working-directory: ${{ env.working_dir }}
     steps:
 #      - uses: actions/checkout@v2
 #        with:
