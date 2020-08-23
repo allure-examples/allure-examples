@@ -13,7 +13,7 @@ env:
 
 jobs:
   gradle-kts:
-    name: Push to repo ${{ env.working_dir }}-gradle-kts
+    name: Push to repo java-junit5-gradle-kts
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -38,7 +38,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
   gradle:
-    name: Push to repo ${{ env.working_dir }}-gradle
+    name: Push to repo java-junit5-gradle
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
