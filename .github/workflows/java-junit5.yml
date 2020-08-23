@@ -26,6 +26,12 @@ jobs:
           path: ${{ env.working_dir }}
           persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal token
           fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
+      - uses: actions/checkout@v2
+        with:
+          path: gradle-kts
+          repository: simple-elf/java-junit5-gradle-kts
+          token: ${{ secrets.ACCESS_TOKEN }}
+
 
 #      - uses: actions/cache@v1
 #        with:
@@ -63,10 +69,11 @@ jobs:
 #        run: sudo cp -r $(pwd)/../${{ env.working_dir }}/. $(pwd)/../gradle-kts
 #      - run: ls -a $(pwd)/../gradle-kts/
 #      - run: sudo rm -r $(pwd)/../java-junit5-maven
-      - run: mkdir -p gradle-kts
-      - run: touch file.txt
-      - run: echo 111 >> file.txt
+      #- run: mkdir -p gradle-kts
+      - run: touch gradle-kts/file.txt
+      - run: echo 111 >> gradle-kts/file.txt
       - run: ls -l
+      - run: ls -l gradle-kts
 
       - uses: autosuite/autocommit@master
         with:
