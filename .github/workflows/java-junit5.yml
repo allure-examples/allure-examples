@@ -13,23 +13,18 @@ env:
 
 jobs:
   gradle-kts:
-    name: Push to repo java-junit5-gradle-kts
+    name: Push to repo ${{ env.working_dir }}-gradle-kts
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-        with:
-          #path: ${{ env.working_dir }}
-          persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal token
-          #fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
+#        with:
+#          persist-credentials: false
 
       - name: Copy needed files
         run: |
           cp -r ${{ env.working_dir }}/. ./gradle-kts
-          rm ./gradle-kts/build.gradle ./gradle-kts/pom.xml
-
-## mkdir -p ./gradle-kts/.github/workflows && cp -r ./.github/workflows/${{ env.working_dir }}-gradle-kts.yml "$_"
-
-      - run: ls -l gradle-kts
+          rm ./gradle-kts/build.gradle ./gradle-kts/pom.xml ./gradle-kts/.github/workflows/java-junit5-gradle.yml
+          ls -l gradle-kts
 
       - run: git init
         working-directory: gradle-kts
@@ -37,7 +32,57 @@ jobs:
       - name: Push
         uses: actions-js/push@master
         with:
-          github_token: ${{ secrets.ACCESS_TOKEN }}
-          force: true
-          directory: gradle-kts
           repository: simple-elf/java-junit5-gradle-kts
+          directory: gradle-kts
+          force: true
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
+  gradle:
+    name: Push to repo ${{ env.working_dir }}-gradle
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      - name: Copy needed files
+        run: |
+          cp -r ${{ env.working_dir }}/. ./gradle
+          rm ./gradle/build.gradle.kts ./gradle/pom.xml ./gradle-kts/.github/workflows/java-junit5-gradle-kts.yml
+          ls -l gradle
+
+      - run: git init
+        working-directory: gradle
+
+      - name: Push
+        uses: actions-js/push@master
+        with:
+          repository: simple-elf/java-junit5-gradle
+          directory: gradle
+          force: true
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
+#  maven:
+#    name: Push to repo ${{ env.working_dir }}-maven
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/checkout@v2
+#        with:
+#          persist-credentials: false
+#
+#      - name: Copy needed files
+#        run: |
+#          cp -r ${{ env.working_dir }}/. ./maven
+#          rm ./maven/build.gradle.kts ./maven/build.gradle
+#          ls -l maven
+#
+#      - run: git init
+#        working-directory: maven
+#
+#      - name: Push
+#        uses: actions-js/push@master
+#        with:
+#          repository: simple-elf/java-junit5-gradle
+#          directory: maven
+#          force: true
+#          github_token: ${{ secrets.GITHUB_TOKEN }}

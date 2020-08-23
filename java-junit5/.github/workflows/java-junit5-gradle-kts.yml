@@ -4,9 +4,6 @@ on:
   push:
     branches-ignore:
       - '!master'
-    paths:
-    - 'java-junit5-gradle-kts/**'
-    - '**/java-junit5-gradle-kts.yml'
 
 env:
   working_dir: ${{ github.workflow }}
@@ -53,7 +50,7 @@ jobs:
         if: always()
         #id: allure-report
         with:
-          allure_results: ${{ env.working_dir }}/build/allure-results
+          allure_results: build/allure-results
           #gh_pages: gh-pages
           #allure_report: allure-report
           allure_history: allure-history
