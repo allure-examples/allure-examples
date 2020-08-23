@@ -1,12 +1,12 @@
-name: python-pytest
+name: python-behave
 
 on:
   push:
     branches-ignore:
       - '!master'
     paths:
-    - 'python-pytest/**'
-    - '**/python-pytest.yml'
+    - 'python-behave/**'
+    - '**/python-behave.yml'
 
 env:
   working_dir: ${{ github.workflow }}
@@ -39,7 +39,7 @@ jobs:
 
       - name: Run Test
         if: always()
-        run: pytest --alluredir=allure-results
+        run: behave --format=allure_behave.formatter:AllureFormatter -o allure-results
         continue-on-error: true
 
       - name: Get Allure history

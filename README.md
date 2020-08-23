@@ -42,3 +42,9 @@
 ## java-cucumber5-junit4-gradle-kts ![java-cucumber5-junit4-gradle-kts](https://github.com/simple-elf/allure-examples/workflows/java-cucumber5-junit4-gradle-kts/badge.svg)
 [Allure Report](https://simple-elf.github.io/allure-examples/java-cucumber5-junit4-gradle-kts/) on GitHub Pages (auto redirect to last build)
 
+## python-pytest
+[Allure Report](https://simple-elf.github.io/allure-examples/python-pytest/) on GitHub Pages (auto redirect to last build)
+
+## python-behave
+[Allure Report](https://simple-elf.github.io/allure-examples/python-behave/) on GitHub Pages (auto redirect to last build)
+
