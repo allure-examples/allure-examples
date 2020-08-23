@@ -74,8 +74,8 @@ jobs:
       - run: echo 111233 > gradle-kts/file.txt
       - run: ls -l
       - run: ls -l gradle-kts
-      #- run: git init
-      #  working-directory: gradle-kts
+      - run: git init
+        working-directory: gradle-kts
 
       - name: Push
         uses: actions-js/push@master
