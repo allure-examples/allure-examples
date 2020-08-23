@@ -21,11 +21,11 @@ jobs:
 #        #shell: bash
 #        working-directory: ${{ env.working_dir }}
     steps:
-#      - uses: actions/checkout@v2
-#        with:
-#          path: ${{ env.working_dir }}
-#          persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal token
-#          fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
+      - uses: actions/checkout@v2
+        #with:
+          #path: ${{ env.working_dir }}
+          #persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal token
+          #fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
 #
 #      - uses: actions/checkout@v2
 #        with:
@@ -71,12 +71,11 @@ jobs:
 #      - run: ls -a $(pwd)/../gradle-kts/
 #      - run: sudo rm -r $(pwd)/../java-junit5-maven
       - run: mkdir -p gradle-kts
-      - run: touch file.txt
-      - run: echo 1112 >> file.txt
+      - run: echo 111233 > gradle-kts/file.txt
       - run: ls -l
       - run: ls -l gradle-kts
       - run: git init
-        #working-directory: gradle-kts
+        working-directory: gradle-kts
 
       - uses: autosuite/autocommit@master
         with:
