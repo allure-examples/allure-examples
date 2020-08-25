@@ -27,10 +27,7 @@ public class AllureParameterizedTest {
     @Parameter
     public String testParam;
 
-    //@ParameterizedTest(name = "{displayName} [{argumentsWithNames}]")
-    //@ValueSource(strings = {"First Name", "Second Name"})
     @Test
-    //@DisplayName("allureParameterizedTest displayName")
     @Description("allureParameterizedTest description")
     public void allureParameterizedTest() {
         parameter("testParam", testParam);
