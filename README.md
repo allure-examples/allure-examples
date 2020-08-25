@@ -25,3 +25,15 @@ Allure Report links auto redirect to the last build
 
 [![allure-junit4-maven](https://github.com/allure-examples/allure-junit4-maven/workflows/allure-junit4-maven/badge.svg)](https://github.com/allure-examples/allure-junit4-maven)
 [![Allure Report](https://img.shields.io/badge/Allure%20Report-deployed-yellowgreen)](https://allure-examples.github.io/allure-junit4-maven/)
+
+## allure-testng
+[![allure-testng](https://github.com/allure-examples/allure-examples/workflows/allure-testng/badge.svg)](https://github.com/allure-examples/allure-examples/actions?query=workflow%3Aallure-testng)
+
+[![allure-testng-gradle](https://github.com/allure-examples/allure-testng-gradle/workflows/allure-testng-gradle/badge.svg)](https://github.com/allure-examples/allure-testng-gradle)
+[![Allure Report](https://img.shields.io/badge/Allure%20Report-deployed-yellowgreen)](https://allure-examples.github.io/allure-testng-gradle/)
+
+[![allure-testng-gradle-kts](https://github.com/allure-examples/allure-testng-gradle-kts/workflows/allure-testng-gradle-kts/badge.svg)](https://github.com/allure-examples/allure-testng-gradle-kts)
+[![Allure Report](https://img.shields.io/badge/Allure%20Report-deployed-yellowgreen)](https://allure-examples.github.io/allure-testng-gradle-kts/)
+
+[![allure-testng-maven](https://github.com/allure-examples/allure-testng-maven/workflows/allure-testng-maven/badge.svg)](https://github.com/allure-examples/allure-testng-maven)
+[![Allure Report](https://img.shields.io/badge/Allure%20Report-deployed-yellowgreen)](https://allure-examples.github.io/allure-testng-maven/)
