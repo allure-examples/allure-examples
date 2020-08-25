@@ -19,9 +19,13 @@ jobs:
 
       - name: Copy needed files
         run: |
-          cp -r ${{ github.workflow }}/. ./result
-          rm ./result/pom.xml ./result/.github/workflows/${{ github.workflow }}-maven.yml
-          rm ./result/build.gradle ./result/.github/workflows/${{ github.workflow }}-gradle.yml
+          mkdir -p result
+          cp -r ${{ github.workflow }}/src/. ./result/src
+          cp -r ${{ github.workflow }}/gradle/. ./result/gradle
+          cp ${{ github.workflow }}/gradlew ./result
+          cp ${{ github.workflow }}/gradlew.bat ./result
+          cp ${{ github.workflow }}/build.gradle.kts ./result
+          cp ${{ github.workflow }}/.github/workflows/${{ github.workflow }}-gradle-kts.yml ./result/.github/workflows
           ls -l result
 
       - run: git init
@@ -45,9 +49,13 @@ jobs:
 
       - name: Copy needed files
         run: |
-          cp -r ${{ github.workflow }}/. ./result
-          rm ./result/pom.xml ./result/.github/workflows/${{ github.workflow }}-maven.yml
-          rm ./result/build.gradle.kts ./result/.github/workflows/${{ github.workflow }}-gradle-kts.yml
+          mkdir -p result
+          cp -r ${{ github.workflow }}/src/. ./result/src
+          cp -r ${{ github.workflow }}/gradle/. ./result/gradle
+          cp ${{ github.workflow }}/gradlew ./result
+          cp ${{ github.workflow }}/gradlew.bat ./result
+          cp ${{ github.workflow }}/build.gradle ./result
+          cp ${{ github.workflow }}/.github/workflows/${{ github.workflow }}-gradle.yml ./result/.github/workflows
           ls -l result
 
       - run: git init
@@ -71,10 +79,10 @@ jobs:
 
       - name: Copy needed files
         run: |
-          cp -r ${{ github.workflow }}/. ./result
-          rm ./result/build.gradle ./result/.github/workflows/${{ github.workflow }}-gradle.yml
-          rm ./result/build.gradle.kts ./result/.github/workflows/${{ github.workflow }}-gradle-kts.yml
-          rm -r ./result/gradle ./result/gradlew ./result/gradlew.bat
+          mkdir -p result
+          cp -r ${{ github.workflow }}/src/. ./result/src
+          cp ${{ github.workflow }}/pom.xml ./result
+          cp ${{ github.workflow }}/.github/workflows/${{ github.workflow }}-maven.yml ./result/.github/workflows
           ls -l result
 
       - run: git init
