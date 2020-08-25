@@ -1,12 +1,12 @@
-name: java-junit5
+name: allure-junit5
 
 on:
   push:
     branches-ignore:
       - 'gh-pages'
     paths:
-    - 'java-junit5/**'
-    - '**/java-junit5.yml'
+    - 'allure-junit5/**'
+    - '**/allure-junit5.yml'
 
 jobs:
   gradle-kts:
@@ -30,10 +30,10 @@ jobs:
       - name: Push
         uses: actions-js/push@master
         with:
-          repository: simple-elf/${{ github.workflow }}-gradle-kts
+          repository: allure-examples/${{ github.workflow }}-gradle-kts
           directory: result
           force: true
-          github_token: ${{ secrets.ACCESS_TOKEN }}
+          github_token: ${{ secrets.QAMETA_TOKEN }}
 
   gradle:
     name: Push to repo ...-gradle
@@ -56,10 +56,10 @@ jobs:
       - name: Push
         uses: actions-js/push@master
         with:
-          repository: simple-elf/${{ github.workflow }}-gradle
+          repository: allure-examples/${{ github.workflow }}-gradle
           directory: result
           force: true
-          github_token: ${{ secrets.ACCESS_TOKEN }}
+          github_token: ${{ secrets.QAMETA_TOKEN }}
 
   maven:
     name: Push to repo ...-maven
@@ -83,7 +83,7 @@ jobs:
       - name: Push
         uses: actions-js/push@master
         with:
-          repository: simple-elf/${{ github.workflow }}-maven
+          repository: allure-examples/${{ github.workflow }}-maven
           directory: result
           force: true
-          github_token: ${{ secrets.ACCESS_TOKEN }}
+          github_token: ${{ secrets.QAMETA_TOKEN }}

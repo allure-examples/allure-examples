@@ -7,7 +7,7 @@ plugins {
 }
 
 group "io.qameta.allure.examples"
-version 1.2
+version 1.3
 
 val allureVersion = "2.13.5"
 val junit5Version = "5.6.2"

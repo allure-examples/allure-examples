@@ -1,4 +1,4 @@
-name: java-junit5-maven
+name: allure-junit5-maven
 
 on:
   push:
