@@ -25,7 +25,7 @@ jobs:
           cp ${{ github.workflow }}/gradlew ./result
           cp ${{ github.workflow }}/gradlew.bat ./result
           cp ${{ github.workflow }}/build.gradle.kts ./result
-          cp ${{ github.workflow }}/.github/workflows/${{ github.workflow }}-gradle-kts.yml ./result/.github/workflows
+          cp -r ${{ github.workflow }}/.github/workflows/${{ github.workflow }}-gradle-kts.yml ./result/.github/workflows/
           ls -l result
 
       - run: git init
@@ -55,7 +55,7 @@ jobs:
           cp ${{ github.workflow }}/gradlew ./result
           cp ${{ github.workflow }}/gradlew.bat ./result
           cp ${{ github.workflow }}/build.gradle ./result
-          cp ${{ github.workflow }}/.github/workflows/${{ github.workflow }}-gradle.yml ./result/.github/workflows
+          cp -r ${{ github.workflow }}/.github/workflows/${{ github.workflow }}-gradle.yml ./result/.github/workflows/
           ls -l result
 
       - run: git init
@@ -82,7 +82,7 @@ jobs:
           mkdir -p result
           cp -r ${{ github.workflow }}/src/. ./result/src
           cp ${{ github.workflow }}/pom.xml ./result
-          cp ${{ github.workflow }}/.github/workflows/${{ github.workflow }}-maven.yml ./result/.github/workflows
+          cp -r ${{ github.workflow }}/.github/workflows/${{ github.workflow }}-maven.yml ./result/.github/workflows/
           ls -l result
 
       - run: git init
