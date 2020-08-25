@@ -37,7 +37,7 @@ jobs:
         with:
           repository: allure-examples/${{ github.workflow }}-gradle-kts
           directory: result
-          message: Update source code
+          message: ${{ github.event.head_commit.message }}
           force: true
           github_token: ${{ secrets.QAMETA_TOKEN }}
 
@@ -69,7 +69,7 @@ jobs:
         with:
           repository: allure-examples/${{ github.workflow }}-gradle
           directory: result
-          message: Update source code
+          message: ${{ github.event.head_commit.message }}
           force: true
           github_token: ${{ secrets.QAMETA_TOKEN }}
 
@@ -98,6 +98,6 @@ jobs:
         with:
           repository: allure-examples/${{ github.workflow }}-maven
           directory: result
-          message: Update source code
+          message: ${{ github.event.head_commit.message }}
           force: true
           github_token: ${{ secrets.QAMETA_TOKEN }}
