@@ -6,7 +6,7 @@
 
     <groupId>io.qameta.allure.examples</groupId>
     <artifactId>allure-junit4-maven</artifactId>
-    <version>1.0</version>
+    <version>1.3</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
