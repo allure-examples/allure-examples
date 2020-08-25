@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "moduleResolution": "node",
+    "module": "commonjs",
+    "sourceMap": true,
+    "allowJs": true,
+    "lib": ["es2017"],
+    "baseUrl": ".",
+    "types": [
+      "node",
+      "./_typings/steps"
+    ]
+  }
+}
