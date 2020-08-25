@@ -5,12 +5,9 @@ on:
     branches-ignore:
       - '!master'
 
-env:
-  working_dir: ${{ github.workflow }}
-
 jobs:
   autotests:
-    name: Generate Allure Report
+    name: Run tests and generate Allure Report
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -19,10 +16,9 @@ jobs:
         with:
           path: |
             ~/.m2/repository
-            ~/.gradle/caches
-          key: ${{ runner.os }}-${{ env.working_dir }}-${{ hashFiles('**/pom.xml') }}
+          key: ${{ runner.os }}-${{ github.workflow }}-${{ hashFiles('**/pom.xml') }}
           restore-keys: |
-            ${{ runner.os }}-${{ env.working_dir }}-
+            ${{ runner.os }}-${{ github.workflow }}-
 
       - name: Set up JDK
         uses: actions/setup-java@v1
@@ -46,7 +42,7 @@ jobs:
           path: gh-pages
 
       - name: Allure Report action from marketplace
-        uses: simple-elf/allure-report-action@v1.1
+        uses: simple-elf/allure-report-action@master
         if: always()
         #id: allure-report
         with:
