@@ -1,0 +1,1 @@
+Example of usage Allure Report with JUnit4
