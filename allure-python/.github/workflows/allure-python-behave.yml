@@ -1,24 +1,14 @@
-name: python-behave
+name: allure-python-behave
 
 on:
   push:
     branches-ignore:
       - '!master'
-    paths:
-    - 'python-behave/**'
-    - '**/python-behave.yml'
-
-env:
-  working_dir: ${{ github.workflow }}
 
 jobs:
   autotests:
-    name: Generate Allure Report
+    name: Run tests and generate Allure Report
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        #shell: bash
-        working-directory: ${{ env.working_dir }}
     steps:
       - uses: actions/checkout@v2
 
@@ -51,20 +41,14 @@ jobs:
           path: gh-pages
 
       - name: Allure Report action from marketplace
-        uses: simple-elf/allure-report-action@v1.1
+        uses: simple-elf/allure-report-action@master
         if: always()
         #id: allure-report
         with:
-          allure_results: ${{ env.working_dir }}/allure-results
+          allure_results: allure-results
           #gh_pages: gh-pages
           #allure_report: allure-report
           allure_history: allure-history
-          subfolder: ${{ env.working_dir }}
-
-      - run: sudo cp $(pwd)/../index.html $(pwd)/../allure-history/
-        if: always()
-        continue-on-error: true
-        #working-directory: ${{ github.workspace }}
 
       - name: Deploy report to Github Pages
         if: always()

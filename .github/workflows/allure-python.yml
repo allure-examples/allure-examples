@@ -1,0 +1,66 @@
+name: allure-python
+
+on:
+  push:
+    branches-ignore:
+      - 'gh-pages'
+    paths:
+      - 'allure-python/**'
+      - '**/allure-python.yml'
+
+jobs:
+  pytest:
+    name: Push to repo allure-python-pytest
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      - name: Copy needed files
+        run: |
+          mkdir -p result
+          cp -r ${{ github.workflow }}/${{ github.workflow }}-pytest/. ./result
+          mkdir -p ./result/.github/workflows
+          cp ${{ github.workflow }}/.github/workflows/${{ github.workflow }}-pytest.yml ./result/.github/workflows
+          ls -l result
+
+      - run: git init
+        working-directory: result
+
+      - name: Push
+        uses: actions-js/push@master
+        with:
+          repository: allure-examples/${{ github.workflow }}-pytest
+          directory: result
+          message: ${{ github.event.head_commit.message }}
+          force: true
+          github_token: ${{ secrets.QAMETA_TOKEN }}
+
+  behave:
+    name: Push to repo allure-python-behave
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      - name: Copy needed files
+        run: |
+          mkdir -p result
+          cp -r ${{ github.workflow }}/${{ github.workflow }}-behave/. ./result
+          mkdir -p ./result/.github/workflows
+          cp ${{ github.workflow }}/.github/workflows/${{ github.workflow }}-behave.yml ./result/.github/workflows
+          ls -l result
+
+      - run: git init
+        working-directory: result
+
+      - name: Push
+        uses: actions-js/push@master
+        with:
+          repository: allure-examples/${{ github.workflow }}-behave
+          directory: result
+          message: ${{ github.event.head_commit.message }}
+          force: true
+          github_token: ${{ secrets.QAMETA_TOKEN }}
