@@ -1,28 +1,18 @@
-name: js-cucumberjs
+name: allure-js-codeceptjs
 
 on:
   push:
     branches-ignore:
       - '!master'
-    paths:
-    - 'js-cucumberjs/**'
-    - '**/js-cucumberjs.yml'
-
-env:
-  working_dir: ${{ github.workflow }}
 
 jobs:
   autotests:
-    name: Generate Allure Report
+    name: Run tests and generate Allure Report
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        #shell: bash
-        working-directory: ${{ env.working_dir }}
     steps:
       - uses: actions/checkout@v2
 
-      - name: Use Node.js
+      - name: Set up Node.js
         uses: actions/setup-node@v1
         with:
           node-version: '14'
@@ -51,25 +41,19 @@ jobs:
           path: gh-pages
 
       - name: Allure Report action from marketplace
-        uses: simple-elf/allure-report-action@v1.1
+        uses: simple-elf/allure-report-action@master
         if: always()
         #id: allure-report
         with:
-          allure_results: ${{ env.working_dir }}/allure-results
+          allure_results: allure-results
           #gh_pages: gh-pages
           #allure_report: allure-report
           allure_history: allure-history
-          subfolder: ${{ env.working_dir }}
-
-      - run: sudo cp $(pwd)/../index.html $(pwd)/../allure-history/
-        if: always()
-        continue-on-error: true
-        #working-directory: ${{ github.workspace }}
 
       - name: Deploy report to Github Pages
         if: always()
         uses: peaceiris/actions-gh-pages@v2
         env:
-          PERSONAL_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PUBLISH_BRANCH: gh-pages
           PUBLISH_DIR: allure-history
