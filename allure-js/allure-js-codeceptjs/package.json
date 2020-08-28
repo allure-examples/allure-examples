@@ -8,7 +8,7 @@
   "license": "Apache-2.0",
   "scripts": {
     "test": "codeceptjs run --plugins allure",
-    "lint": "eslint ./specs ./helpers"
+    "lint": "eslint specs ./helpers"
   },
   "devDependencies": {
     "codeceptjs": "^2.6.9",

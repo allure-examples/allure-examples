@@ -7,8 +7,8 @@
   "repository": "https://github.com/simple-elf/allure-examples/js-cucumberjs",
   "license": "Apache-2.0",
   "scripts": {
-    "test": "cucumber-js --format ./features/support/report.js",
-    "lint": "eslint ./features"
+    "test": "cucumber-js --format features/support/report.js",
+    "lint": "eslint features"
   },
   "devDependencies": {
     "cucumber": "^6.0.5",
