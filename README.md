@@ -70,3 +70,15 @@ Allure Report links auto redirect to the last build
 
 [![allure-python-behave](https://github.com/allure-examples/allure-python-behave/workflows/allure-python-behave/badge.svg)](https://github.com/allure-examples/allure-python-behave)
 [![Allure Report](https://img.shields.io/badge/Allure%20Report-deployed-yellowgreen)](https://allure-examples.github.io/allure-python-behave/)
+
+## allure-js
+[![allure-js](https://github.com/allure-examples/allure-examples/workflows/allure-js/badge.svg)](https://github.com/allure-examples/allure-examples/actions?query=workflow%3Aallure-js)
+
+[![allure-js-codeceptjs](https://github.com/allure-examples/allure-js-codeceptjs/workflows/allure-js-codeceptjs/badge.svg)](https://github.com/allure-examples/allure-js-codeceptjs)
+[![Allure Report](https://img.shields.io/badge/Allure%20Report-deployed-yellowgreen)](https://allure-examples.github.io/allure-js-codeceptjs/)
+
+[![allure-js-cucumberjs](https://github.com/allure-examples/allure-js-cucumberjs/workflows/allure-js-cucumberjs/badge.svg)](https://github.com/allure-examples/allure-js-cucumberjs)
+[![Allure Report](https://img.shields.io/badge/Allure%20Report-deployed-yellowgreen)](https://allure-examples.github.io/allure-js-cucumberjs/)
+
+[![allure-js-jest](https://github.com/allure-examples/allure-js-jest/workflows/allure-js-jest/badge.svg)](https://github.com/allure-examples/allure-js-jest)
+[![Allure Report](https://img.shields.io/badge/Allure%20Report-deployed-yellowgreen)](https://allure-examples.github.io/allure-js-jest/)
