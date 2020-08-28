@@ -50,6 +50,18 @@ Allure Report links auto redirect to the last build
 [![allure-cucumber5-junit4-maven](https://github.com/allure-examples/allure-cucumber5-junit4-maven/workflows/allure-cucumber5-junit4-maven/badge.svg)](https://github.com/allure-examples/allure-cucumber5-junit4-maven)
 [![Allure Report](https://img.shields.io/badge/Allure%20Report-deployed-yellowgreen)](https://allure-examples.github.io/allure-cucumber5-junit4-maven/)
 
+## allure-cucumber5-testng
+[![allure-cucumber5-testng](https://github.com/allure-examples/allure-examples/workflows/allure-cucumber5-testng/badge.svg)](https://github.com/allure-examples/allure-examples/actions?query=workflow%3Aallure-cucumber5-testng)
+
+[![allure-cucumber5-testng-gradle](https://github.com/allure-examples/allure-cucumber5-testng-gradle/workflows/allure-cucumber5-testng-gradle/badge.svg)](https://github.com/allure-examples/allure-cucumber5-testng-gradle)
+[![Allure Report](https://img.shields.io/badge/Allure%20Report-deployed-yellowgreen)](https://allure-examples.github.io/allure-cucumber5-testng-gradle/)
+
+[![allure-cucumber5-testng-gradle-kts](https://github.com/allure-examples/allure-cucumber5-testng-gradle-kts/workflows/allure-cucumber5-testng-gradle-kts/badge.svg)](https://github.com/allure-examples/allure-cucumber5-testng-gradle-kts)
+[![Allure Report](https://img.shields.io/badge/Allure%20Report-deployed-yellowgreen)](https://allure-examples.github.io/allure-cucumber5-testng-gradle-kts/)
+
+[![allure-cucumber5-testng-maven](https://github.com/allure-examples/allure-cucumber5-testng-maven/workflows/allure-cucumber5-testng-maven/badge.svg)](https://github.com/allure-examples/allure-cucumber5-testng-maven)
+[![Allure Report](https://img.shields.io/badge/Allure%20Report-deployed-yellowgreen)](https://allure-examples.github.io/allure-cucumber5-testng-maven/)
+
 ## allure-python
 [![allure-python](https://github.com/allure-examples/allure-examples/workflows/allure-python/badge.svg)](https://github.com/allure-examples/allure-examples/actions?query=workflow%3Aallure-python)
 
