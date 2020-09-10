@@ -1,0 +1,42 @@
+name: allure-kotlin-junit5
+
+on:
+  push:
+    branches-ignore:
+      - 'gh-pages'
+    paths:
+    - 'allure-kotlin-junit5/**'
+    - '**/allure-kotlin-junit5.yml'
+
+jobs:
+  gradle-kts:
+    name: Push to repo ...-gradle-kts
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      - name: Copy needed files
+        run: |
+          mkdir -p result
+          cp -r ${{ github.workflow }}/src/. ./result/src
+          cp -r ${{ github.workflow }}/gradle/. ./result/gradle
+          cp ${{ github.workflow }}/gradlew ./result
+          cp ${{ github.workflow }}/gradlew.bat ./result
+          cp ${{ github.workflow }}/build.gradle.kts ./result
+          mkdir -p ./result/.github/workflows
+          cp ${{ github.workflow }}/.github/workflows/${{ github.workflow }}-gradle-kts.yml ./result/.github/workflows
+          ls -l result
+
+      - run: git init
+        working-directory: result
+
+      - name: Push
+        uses: actions-js/push@master
+        with:
+          repository: allure-examples/${{ github.workflow }}-gradle-kts
+          directory: result
+          message: ${{ github.event.head_commit.message }}
+          force: true
+          github_token: ${{ secrets.QAMETA_TOKEN }}
