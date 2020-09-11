@@ -82,3 +82,9 @@ Allure Report links auto redirect to the last build
 
 [![allure-js-jest](https://github.com/allure-examples/allure-js-jest/workflows/allure-js-jest/badge.svg)](https://github.com/allure-examples/allure-js-jest)
 [![Allure Report](https://img.shields.io/badge/Allure%20Report-deployed-yellowgreen)](https://allure-examples.github.io/allure-js-jest/)
+
+## allure-kotlin-junit5
+[![allure-kotlin-junit5](https://github.com/allure-examples/allure-examples/workflows/allure-kotlin-junit5/badge.svg)](https://github.com/allure-examples/allure-examples/actions?query=workflow%3Aallure-kotlin-junit5)
+
+[![allure-kotlin-junit5-gradle-kts](https://github.com/allure-examples/allure-kotlin-junit5-gradle-kts/workflows/allure-kotlin-junit5-gradle-kts/badge.svg)](https://github.com/allure-examples/allure-kotlin-junit5-gradle-kts)
+[![Allure Report](https://img.shields.io/badge/Allure%20Report-deployed-yellowgreen)](https://allure-examples.github.io/allure-kotlin-junit5-gradle-kts/)

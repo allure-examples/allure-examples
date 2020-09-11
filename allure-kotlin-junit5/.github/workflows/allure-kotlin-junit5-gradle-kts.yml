@@ -1,4 +1,4 @@
-name: allure-junit5-gradle-kts
+name: allure-kotlin-junit5-gradle-kts
 
 on:
   push:
