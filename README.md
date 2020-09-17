@@ -2,6 +2,12 @@
 
 Allure Report links auto redirect to the last build
 
+## allure-java-commons
+[![allure-java-commons](https://github.com/allure-examples/allure-examples/workflows/allure-java-commons/badge.svg)](https://github.com/allure-examples/allure-examples/actions?query=workflow%3Aallure-java-commons)
+
+[![allure-java-commons](https://github.com/allure-examples/allure-java-commons/workflows/allure-java-commons/badge.svg)](https://github.com/allure-examples/allure-java-commons)
+[![Allure Report](https://img.shields.io/badge/Allure%20Report-deployed-yellowgreen)](https://allure-examples.github.io/allure-java-commons/)
+
 ## allure-junit5
 [![allure-junit5](https://github.com/allure-examples/allure-examples/workflows/allure-junit5/badge.svg)](https://github.com/allure-examples/allure-examples/actions?query=workflow%3Aallure-junit5)
 
