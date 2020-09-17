@@ -1,6 +1,5 @@
 package io.qameta.allure.examples.testng;
 
-import io.qameta.allure.Description;
 import io.qameta.allure.Step;
 import io.qameta.allure.model.Status;
 import org.testng.annotations.Test;

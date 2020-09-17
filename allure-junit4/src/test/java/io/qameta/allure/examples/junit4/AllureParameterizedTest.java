@@ -1,13 +1,12 @@
 package io.qameta.allure.examples.junit4;
 
 import io.qameta.allure.Description;
-import io.qameta.allure.junit4.DisplayName;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-import org.junit.runners.Parameterized.*;
+import org.junit.runners.Parameterized.Parameter;
+import org.junit.runners.Parameterized.Parameters;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Collection;
 

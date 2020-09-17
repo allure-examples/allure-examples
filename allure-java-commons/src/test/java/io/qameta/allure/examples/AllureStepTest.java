@@ -2,10 +2,8 @@ package io.qameta.allure.examples;
 
 import io.qameta.allure.Step;
 import io.qameta.allure.model.Status;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static io.qameta.allure.Allure.parameter;
 import static io.qameta.allure.Allure.step;
 
 public class AllureStepTest {
