@@ -1,4 +1,4 @@
-name: ts-codeceptjs-ts_node
+name: allure-typescript
 
 on:
   push:
