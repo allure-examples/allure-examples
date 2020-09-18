@@ -22,8 +22,10 @@ public class AllureAttachmentTest {
 
         InputStream stream = ClassLoader.getSystemResourceAsStream("content.xml");
         attachment("content1.xml", stream);
+
         stream = ClassLoader.getSystemResourceAsStream("content.xml");
         addAttachment("content2.xml", stream);
+
         stream = ClassLoader.getSystemResourceAsStream("content.xml");
         addAttachment("content3.xml", "text/xml", stream, "xml");
     }
