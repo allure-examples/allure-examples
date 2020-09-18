@@ -11,7 +11,7 @@
     "def": "mkdir -p ./_typings && TS_NODE_PROJECT=./tsconfig.json codeceptjs def --output=./_typings"
   },
   "devDependencies": {
-    "codeceptjs": "^2.6.9",
+    "codeceptjs": "^2.6.10",
     "ts-node": "^9.0.0",
     "typescript": "^4.0.2"
   }
