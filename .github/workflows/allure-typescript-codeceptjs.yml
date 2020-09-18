@@ -5,8 +5,8 @@ on:
     branches-ignore:
       - '!master'
     paths:
-    - 'ts-codeceptjs-ts_node/**'
-    - '**/ts-codeceptjs-ts_node.yml'
+    - 'allure-typescript/codeceptjs/**'
+    - '**/allure-typescript-codeceptjs.yml'
 
 env:
   working_dir: ${{ github.workflow }}
