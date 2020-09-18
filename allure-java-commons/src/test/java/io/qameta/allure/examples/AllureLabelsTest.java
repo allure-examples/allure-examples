@@ -3,16 +3,25 @@ package io.qameta.allure.examples;
 import org.junit.jupiter.api.Test;
 
 import static io.qameta.allure.Allure.label;
-import static io.qameta.allure.Allure.step;
 
 public class AllureLabelsTest {
 
+    /**
+     * Feature of Allure EE and Allure 3
+     */
     @Test
     public void allureLabelTest() {
-        label("label 1", "label 1 value");
-        step("step with label", () -> {
-            label("label 2", "label 2 value");
-        });
+        //Custom Fields
+        label("microservice", "Report");
+        label("env", "Stage");
+
+        //Test Layer
+        label("layer", "Selenium");
+        label("layer", "API");
+
+        //Members
+        label("author", "eroshenkoam");
+        label("author", "simple-elf");
     }
 
 }
