@@ -1,12 +1,11 @@
 package io.qameta.allure.examples;
 
-import io.qameta.allure.Step;
 import io.qameta.allure.model.Status;
 import org.junit.jupiter.api.Test;
 
 import static io.qameta.allure.Allure.step;
 
-public class AllureStepTest {
+public class AllureLambdaStepTest {
 
     @Test
     public void allureSimpleStepTest() {
@@ -25,35 +24,11 @@ public class AllureStepTest {
 
         step("Lambda step with parameter", (step) -> {
             step.parameter("param", "value");
-            //parameter("test param", "value2");
         });
 
         step("Old step name", (step) -> {
             step.name("Dynamic step name");
         });
-    }
-
-    @Test
-    public void allureStepAnnotationTest() {
-        simpleTestMethod();
-        parametrizedTestMethod("method parameter");
-        parametrizedWithFieldTestMethod("field parameter");
-    }
-
-
-    @Step("Parametrized test method with step annotation'")
-    public void parametrizedTestMethod(String param) {
-        step("Method parameter: " + param);
-    }
-
-    @Step("Parametrized test method with fields: '{param}'")
-    public void parametrizedWithFieldTestMethod(String param) {
-
-    }
-
-    @Step("Simple test method with step annotation")
-    public void simpleTestMethod() {
-        step("Simple step inside test method");
     }
 
 }
