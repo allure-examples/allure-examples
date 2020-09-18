@@ -1,0 +1,41 @@
+name: allure-typescript
+
+on:
+  push:
+    branches-ignore:
+      - '!master'
+    paths:
+    - 'allure-typescript/**'
+    - '**/allure-typescript.yml'
+
+env:
+  working_dir: ${{ github.workflow }}
+
+jobs:
+  codeceptjs:
+    name: Push to repo allure-typescript-codeceptjs
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      - name: Copy needed files
+        run: |
+          mkdir -p result
+          cp -r ${{ github.workflow }}/${{ github.workflow }}-codeceptjs/. ./result
+          mkdir -p ./result/.github/workflows
+          cp ${{ github.workflow }}/.github/workflows/${{ github.workflow }}-codeceptjs.yml ./result/.github/workflows
+          ls -l result
+
+      - run: git init
+        working-directory: result
+
+      - name: Push
+        uses: actions-js/push@master
+        with:
+          repository: allure-examples/${{ github.workflow }}-codeceptjs
+          directory: result
+          message: ${{ github.event.head_commit.message }}
+          force: true
+          github_token: ${{ secrets.QAMETA_TOKEN }}
