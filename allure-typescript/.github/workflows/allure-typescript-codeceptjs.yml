@@ -1,15 +1,9 @@
-name: ts-codeceptjs-ts_node
+name: allure-typescript-codeceptjs
 
 on:
   push:
     branches-ignore:
       - '!master'
-    paths:
-    - 'allure-typescript/codeceptjs/**'
-    - '**/allure-typescript-codeceptjs.yml'
-
-env:
-  working_dir: ${{ github.workflow }}
 
 jobs:
   autotests:
