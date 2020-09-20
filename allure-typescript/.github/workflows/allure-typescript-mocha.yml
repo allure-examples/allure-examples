@@ -19,8 +19,11 @@ jobs:
 
       - name: Install dependencies
         if: always()
-        run: |
-          npm install
+        run: npm install
+
+      - name: Check code style
+        if: always()
+        run: npm run lint
 
       - name: Run Test
         if: always()

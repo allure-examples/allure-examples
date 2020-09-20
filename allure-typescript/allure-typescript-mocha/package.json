@@ -7,11 +7,17 @@
   "repository": "https://github.com/allure-examples/allure-typescript-mocha",
   "license": "Apache-2.0",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "lint": "eslint . --ext .ts"
   },
   "devDependencies": {
+    "@types/chai": "^4.2.12",
     "@types/mocha": "^8.0.3",
+    "@typescript-eslint/eslint-plugin": "^4.1.1",
+    "@typescript-eslint/parser": "^4.1.1",
     "allure-mocha": "^2.0.0-beta.8",
+    "chai": "^4.2.0",
+    "eslint": "^7.9.0",
     "mocha": "^8.1.3",
     "ts-node": "^9.0.0",
     "typescript": "^4.0.2"
