@@ -39,3 +39,31 @@ jobs:
           message: ${{ github.event.head_commit.message }}
           force: true
           github_token: ${{ secrets.QAMETA_TOKEN }}
+
+  mocha:
+    name: Push to repo allure-typescript-mocha
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      - name: Copy needed files
+        run: |
+          mkdir -p result
+          cp -r ${{ github.workflow }}/${{ github.workflow }}-mocha/. ./result
+          mkdir -p ./result/.github/workflows
+          cp ${{ github.workflow }}/.github/workflows/${{ github.workflow }}-mocha.yml ./result/.github/workflows
+          ls -l result
+
+      - run: git init
+        working-directory: result
+
+      - name: Push
+        uses: actions-js/push@master
+        with:
+          repository: allure-examples/${{ github.workflow }}-mocha
+          directory: result
+          message: ${{ github.event.head_commit.message }}
+          force: true
+          github_token: ${{ secrets.QAMETA_TOKEN }}
