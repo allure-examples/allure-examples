@@ -9,7 +9,7 @@ plugins {
 group "io.qameta.allure.examples"
 version 1.3
 
-val allureVersion = "2.13.5"
+val allureVersion = "2.13.6"
 val junit4Version = "4.12"
 
 tasks.withType(JavaCompile::class) {
