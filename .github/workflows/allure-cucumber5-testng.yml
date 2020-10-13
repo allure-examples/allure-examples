@@ -5,7 +5,7 @@ on:
     branches-ignore:
       - 'gh-pages'
     paths:
-    - 'allure-cucumber5-testng/**'
+    - 'allure-cucumber-jvm/allure-cucumber5-testng/**'
     - '**/allure-cucumber5-testng.yml'
 
 jobs:
@@ -20,13 +20,13 @@ jobs:
       - name: Copy needed files
         run: |
           mkdir -p result
-          cp -r ${{ github.workflow }}/src/. ./result/src
-          cp -r ${{ github.workflow }}/gradle/. ./result/gradle
-          cp ${{ github.workflow }}/gradlew ./result
-          cp ${{ github.workflow }}/gradlew.bat ./result
-          cp ${{ github.workflow }}/build.gradle.kts ./result
+          cp -r allure-cucumber-jvm/${{ github.workflow }}/src/. ./result/src
+          cp -r allure-cucumber-jvm/${{ github.workflow }}/gradle/. ./result/gradle
+          cp allure-cucumber-jvm/${{ github.workflow }}/gradlew ./result
+          cp allure-cucumber-jvm/${{ github.workflow }}/gradlew.bat ./result
+          cp allure-cucumber-jvm/${{ github.workflow }}/build.gradle.kts ./result
           mkdir -p ./result/.github/workflows
-          cp ${{ github.workflow }}/.github/workflows/${{ github.workflow }}-gradle-kts.yml ./result/.github/workflows
+          cp allure-cucumber-jvm/${{ github.workflow }}/.github/workflows/${{ github.workflow }}-gradle-kts.yml ./result/.github/workflows
           ls -l result
 
       - run: git init
@@ -52,13 +52,13 @@ jobs:
       - name: Copy needed files
         run: |
           mkdir -p result
-          cp -r ${{ github.workflow }}/src/. ./result/src
-          cp -r ${{ github.workflow }}/gradle/. ./result/gradle
-          cp ${{ github.workflow }}/gradlew ./result
-          cp ${{ github.workflow }}/gradlew.bat ./result
-          cp ${{ github.workflow }}/build.gradle ./result
+          cp -r allure-cucumber-jvm/${{ github.workflow }}/src/. ./result/src
+          cp -r allure-cucumber-jvm/${{ github.workflow }}/gradle/. ./result/gradle
+          cp allure-cucumber-jvm/${{ github.workflow }}/gradlew ./result
+          cp allure-cucumber-jvm/${{ github.workflow }}/gradlew.bat ./result
+          cp allure-cucumber-jvm/${{ github.workflow }}/build.gradle ./result
           mkdir -p ./result/.github/workflows
-          cp ${{ github.workflow }}/.github/workflows/${{ github.workflow }}-gradle.yml ./result/.github/workflows
+          cp allure-cucumber-jvm/${{ github.workflow }}/.github/workflows/${{ github.workflow }}-gradle.yml ./result/.github/workflows
           ls -l result
 
       - run: git init
@@ -84,10 +84,10 @@ jobs:
       - name: Copy needed files
         run: |
           mkdir -p result
-          cp -r ${{ github.workflow }}/src/. ./result/src
-          cp ${{ github.workflow }}/pom.xml ./result
+          cp -r allure-cucumber-jvm/${{ github.workflow }}/src/. ./result/src
+          cp allure-cucumber-jvm/${{ github.workflow }}/pom.xml ./result
           mkdir -p ./result/.github/workflows
-          cp ${{ github.workflow }}/.github/workflows/${{ github.workflow }}-maven.yml ./result/.github/workflows
+          cp allure-cucumber-jvm/${{ github.workflow }}/.github/workflows/${{ github.workflow }}-maven.yml ./result/.github/workflows
           ls -l result
 
       - run: git init
