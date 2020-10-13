@@ -77,17 +77,17 @@ Allure Report links auto redirect to the last build
 [![allure-python-behave](https://github.com/allure-examples/allure-python-behave/workflows/allure-python-behave/badge.svg)](https://github.com/allure-examples/allure-python-behave)
 [![Allure Report](https://img.shields.io/badge/Allure%20Report-deployed-yellowgreen)](https://allure-examples.github.io/allure-python-behave/)
 
-## allure-js
-[![allure-js](https://github.com/allure-examples/allure-examples/workflows/allure-js/badge.svg)](https://github.com/allure-examples/allure-examples/actions?query=workflow%3Aallure-js)
+## allure-javascript
+[![allure-javascript](https://github.com/allure-examples/allure-examples/workflows/allure-javascript/badge.svg)](https://github.com/allure-examples/allure-examples/actions?query=workflow%3Aallure-javascript)
 
-[![allure-js-codeceptjs](https://github.com/allure-examples/allure-js-codeceptjs/workflows/allure-js-codeceptjs/badge.svg)](https://github.com/allure-examples/allure-js-codeceptjs)
-[![Allure Report](https://img.shields.io/badge/Allure%20Report-deployed-yellowgreen)](https://allure-examples.github.io/allure-js-codeceptjs/)
+[![allure-javascript-codeceptjs](https://github.com/allure-examples/allure-javascript-codeceptjs/workflows/allure-javascript-codeceptjs/badge.svg)](https://github.com/allure-examples/allure-javascript-codeceptjs)
+[![Allure Report](https://img.shields.io/badge/Allure%20Report-deployed-yellowgreen)](https://allure-examples.github.io/allure-javascript-codeceptjs/)
 
-[![allure-js-cucumberjs](https://github.com/allure-examples/allure-js-cucumberjs/workflows/allure-js-cucumberjs/badge.svg)](https://github.com/allure-examples/allure-js-cucumberjs)
-[![Allure Report](https://img.shields.io/badge/Allure%20Report-deployed-yellowgreen)](https://allure-examples.github.io/allure-js-cucumberjs/)
+[![allure-javascript-cucumberjs](https://github.com/allure-examples/allure-javascript-cucumberjs/workflows/allure-javascript-cucumberjs/badge.svg)](https://github.com/allure-examples/allure-javascript-cucumberjs)
+[![Allure Report](https://img.shields.io/badge/Allure%20Report-deployed-yellowgreen)](https://allure-examples.github.io/allure-javascript-cucumberjs/)
 
-[![allure-js-jest](https://github.com/allure-examples/allure-js-jest/workflows/allure-js-jest/badge.svg)](https://github.com/allure-examples/allure-js-jest)
-[![Allure Report](https://img.shields.io/badge/Allure%20Report-deployed-yellowgreen)](https://allure-examples.github.io/allure-js-jest/)
+[![allure-javascript-jest](https://github.com/allure-examples/allure-javascript-jest/workflows/allure-javascript-jest/badge.svg)](https://github.com/allure-examples/allure-javascript-jest)
+[![Allure Report](https://img.shields.io/badge/Allure%20Report-deployed-yellowgreen)](https://allure-examples.github.io/allure-javascript-jest/)
 
 ## allure-kotlin-junit5
 [![allure-kotlin-junit5](https://github.com/allure-examples/allure-examples/workflows/allure-kotlin-junit5/badge.svg)](https://github.com/allure-examples/allure-examples/actions?query=workflow%3Aallure-kotlin-junit5)
