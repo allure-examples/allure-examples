@@ -1,4 +1,4 @@
-name: allure-js-cucumberjs
+name: allure-javascript-cucumberjs
 
 on:
   push:

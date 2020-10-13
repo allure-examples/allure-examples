@@ -1,16 +1,16 @@
-name: allure-js
+name: allure-javascript
 
 on:
   push:
     branches-ignore:
       - 'gh-pages'
     paths:
-      - 'allure-js/**'
-      - '**/allure-js.yml'
+      - 'allure-javascript/**'
+      - '**/allure-javascript.yml'
 
 jobs:
   codeceptjs:
-    name: Push to repo allure-js-codeceptjs
+    name: Push to repo allure-javascript-codeceptjs
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -38,7 +38,7 @@ jobs:
           github_token: ${{ secrets.QAMETA_TOKEN }}
 
   cucumberjs:
-    name: Push to repo allure-js-cucumberjs
+    name: Push to repo allure-javascript-cucumberjs
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -66,7 +66,7 @@ jobs:
           github_token: ${{ secrets.QAMETA_TOKEN }}
 
   jest:
-    name: Push to repo allure-js-jest
+    name: Push to repo allure-javascript-jest
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2

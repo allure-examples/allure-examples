@@ -1,4 +1,4 @@
-name: allure-js-codeceptjs
+name: allure-javascript-codeceptjs
 
 on:
   push:

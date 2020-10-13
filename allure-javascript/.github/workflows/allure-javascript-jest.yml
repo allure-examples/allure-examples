@@ -1,4 +1,4 @@
-name: allure-js-jest
+name: allure-javascript-jest
 
 on:
   push:
