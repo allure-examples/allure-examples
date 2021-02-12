@@ -30,7 +30,7 @@ jobs:
       - name: Setup Allure TestOps integration
         if: always()
         run: |
-          wget https://dl.bintray.com/qameta/generic/allurectl/1.10.2/allurectl_linux_386 -O ./allurectl
+          wget https://dl.bintray.com/qameta/generic/allurectl/1.15.0/allurectl_linux_386 -O ./allurectl
           chmod +x ./allurectl
 
       - name: Run Tests
