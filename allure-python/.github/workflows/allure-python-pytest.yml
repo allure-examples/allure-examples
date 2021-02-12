@@ -40,6 +40,10 @@ jobs:
 
       - name: Upload test results to Allure TestOps
         if: always()
+        env:
+          ALLURE_TOKEN: ${{ secrets.ALLURE_TOKEN}}
+          ALLURE_ENDPOINT: ${{ secrets.ALLURE_ENDPOINT}}
+          ALLURE_PROJECT_ID: ${{ secrets.ALLURE_PROJECT_ID}}
         run: ./allurectl upload allure-results
 
       - name: Get Allure history
