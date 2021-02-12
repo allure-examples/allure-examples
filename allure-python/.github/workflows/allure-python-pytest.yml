@@ -30,8 +30,8 @@ jobs:
       - name: Setup Allure TestOps integration
         if: always()
         run: |
-          wget https://dl.bintray.com/qameta/generic/allurectl/1.10.2/allurectl_linux_386 -O /usr/bin/allurectl
-          chmod +x /usr/bin/allurectl
+          wget https://dl.bintray.com/qameta/generic/allurectl/1.10.2/allurectl_linux_386 -O ./allurectl
+          chmod +x ./allurectl
 
       - name: Run Tests
         if: always()
@@ -40,7 +40,7 @@ jobs:
 
       - name: Upload test results to Allure TestOps
         if: always()
-        run: allurectl upload build/allure-results
+        run: ./allurectl upload allure-results
 
       - name: Get Allure history
         uses: actions/checkout@v2
