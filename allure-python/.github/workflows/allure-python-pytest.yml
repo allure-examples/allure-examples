@@ -27,10 +27,20 @@ jobs:
         run: |
           flake8
 
+      - name: Setup Allure TestOps integration
+        if: always()
+        run: |
+          wget https://dl.bintray.com/qameta/generic/allurectl/1.10.2/allurectl_linux_386 -O /usr/bin/allurectl
+          chmod +x /usr/bin/allurectl
+
       - name: Run Tests
         if: always()
         run: pytest --alluredir=allure-results
         continue-on-error: true
+
+      - name: Upload test results to Allure TestOps
+        if: always()
+        run: allurectl upload build/allure-results
 
       - name: Get Allure history
         uses: actions/checkout@v2
