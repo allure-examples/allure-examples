@@ -52,6 +52,6 @@ def test_allure_steps():
     skipped_decorated_step()
 
 
-@assume_step
+@assume_step("Skipped decorated step")
 def skipped_decorated_step():
     pytest.skip('Some skip reason')
