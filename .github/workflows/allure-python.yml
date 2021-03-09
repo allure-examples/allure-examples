@@ -10,6 +10,8 @@ on:
 
 jobs:
   pytest:
+    env:
+      PYTEST_WORKDIR: ./${{ github.workflow }}/${{ github.workflow }}-pytest
     name: Push to repo allure-python-pytest
     runs-on: ubuntu-latest
     steps:
@@ -17,10 +19,27 @@ jobs:
         with:
           persist-credentials: false
 
+      - name: Set up Python 3.x
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        working-directory: ${{ env.PYTEST_WORKDIR }}
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Check code style
+        working-directory: ${{ env.PYTEST_WORKDIR }}
+        if: always()
+        run: |
+          flake8
+
       - name: Copy needed files
         run: |
           mkdir -p result
-          cp -r ${{ github.workflow }}/${{ github.workflow }}-pytest/. ./result
+          cp -r $PYTEST_WORKDIR/. ./result
           mkdir -p ./result/.github/workflows
           cp ${{ github.workflow }}/.github/workflows/${{ github.workflow }}-pytest.yml ./result/.github/workflows
           ls -l result
@@ -38,6 +57,8 @@ jobs:
           github_token: ${{ secrets.QAMETA_TOKEN }}
 
   behave:
+    env:
+      BEHAVE_WORKDIR: ./${{ github.workflow }}/${{ github.workflow }}-behave
     name: Push to repo allure-python-behave
     runs-on: ubuntu-latest
     steps:
@@ -45,10 +66,27 @@ jobs:
         with:
           persist-credentials: false
 
+      - name: Set up Python 3.x
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        working-directory: ${{ env.BEHAVE_WORKDIR }}
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Check code style
+        working-directory: ${{ env.BEHAVE_WORKDIR }}
+        if: always()
+        run: |
+          flake8
+
       - name: Copy needed files
         run: |
           mkdir -p result
-          cp -r ${{ github.workflow }}/${{ github.workflow }}-behave/. ./result
+          cp -r $BEHAVE_WORKDIR/. ./result
           mkdir -p ./result/.github/workflows
           cp ${{ github.workflow }}/.github/workflows/${{ github.workflow }}-behave.yml ./result/.github/workflows
           ls -l result
