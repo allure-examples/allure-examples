@@ -35,3 +35,13 @@ def test_allure_severity(severity):
 @allure.tag("Tagged test")
 def test_allure_tags():
     allure.dynamic.tag("Dynamic tag")
+
+
+@allure.label("owner", "admin")
+def test_owner():
+    pass
+
+
+@allure.id(123)
+def test_allure_id():
+    pass
