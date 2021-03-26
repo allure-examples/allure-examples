@@ -1,5 +1,4 @@
 import allure
-import pytest
 
 
 def test_docstring_description():
@@ -33,10 +32,9 @@ def test_decorated_html_description():
     pass
 
 
-@pytest.mark.parametrize("test_param", ["First param", "Second param"])
-def test_dynamic_description(test_param):
+def test_dynamic_description():
     """
     Initial test description
     """
     allure.dynamic.description(test_dynamic_description.__doc__ +
-                               f"\n This is dynamic description part based on {test_param}")
+                               f"\n This is dynamic description part: {2 + 2}")

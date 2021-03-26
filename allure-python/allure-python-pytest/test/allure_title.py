@@ -7,9 +7,10 @@ def test_with_title():
     pass
 
 
+@allure.title("Test title with param {param}")
 @pytest.mark.parametrize("param", ["first", "second"])
 def test_with_dynamic_title(param):
-    allure.dynamic.title(f"Some title for test based on param {param}")
+    pass
 
 
 @allure.title("Fixture title")
