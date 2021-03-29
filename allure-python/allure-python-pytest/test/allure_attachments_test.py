@@ -14,4 +14,6 @@ def test_attach():
     allure.attach('first,second,third\none,two,three', name="CSV example", attachment_type=attachment_type.CSV)
     allure.attach(json.dumps({"first": 1, "second": 2}, indent=2),
                   name="JSON example", attachment_type=attachment_type.JSON)
+    allure.attach("\n".join(["https://github.com/allure-framework", "https://github.com/allure-examples"]),
+                  name="URI List example", attachment_type=attachment_type.URI_LIST)
     # TODO Screen diff
