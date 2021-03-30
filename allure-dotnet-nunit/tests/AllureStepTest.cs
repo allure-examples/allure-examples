@@ -27,10 +27,7 @@ namespace allure_nunit.tests
         {
             Step1();
 
-            AllureLifecycle.Instance.WrapInStep(() =>
-            {
-                Console.WriteLine("Step 2");
-            }, "Step2");
+            AllureLifecycle.Instance.WrapInStep(() => { Console.WriteLine("Step 2"); }, "Step2");
 
             Step3();
         }
@@ -45,10 +42,8 @@ namespace allure_nunit.tests
                 AllureLifecycle.Instance.WrapInStep(() =>
                 {
                     Console.WriteLine("2");
-                    AllureLifecycle.Instance.WrapInStep(() =>
-                    {
-                        Console.WriteLine("Step in step 2");
-                    }, "Step in Step 2");
+                    AllureLifecycle.Instance.WrapInStep(() => { Console.WriteLine("Step in step 2"); },
+                        "Step in Step 2");
                 }, "Step2");
 
                 Step3();

@@ -9,29 +9,6 @@ namespace allure_nunit.tests
     [AllureSuite("Tests - Ignored")]
     public class AllureIgnoredTest : BaseTest
     {
-        [Test]
-        [Ignore("Ignored test")]
-        public void IgnoredTest()
-        {
-        }
-
-        
-        [Test]
-        [TestCase("a")]
-        [TestCase("b", Ignore = "Case")]
-        public void IgnoreTestWithTestCaseParams(string data)
-        {
-            Console.WriteLine(data);
-        }
-
-        
-        [Test]
-        [TestCaseSource(typeof(AllureIgnoredTest), nameof(Data))]
-        public void IgnoreTestWithTestCaseData(string data)
-        {
-            Console.WriteLine(data);
-        }
-
         private static IEnumerable Data
         {
             get
@@ -40,7 +17,28 @@ namespace allure_nunit.tests
                 yield return new TestCaseData("Ignore").SetName("{m}_NotExist ignored").Ignore("Test");
             }
         }
+
+        [Test]
+        [Ignore("Ignored test")]
+        public void IgnoredTest()
+        {
+        }
+
+
+        [Test]
+        [TestCase("a")]
+        [TestCase("b", Ignore = "Case")]
+        public void IgnoreTestWithTestCaseParams(string data)
+        {
+            Console.WriteLine(data);
+        }
+
+
+        [Test]
+        [TestCaseSource(typeof(AllureIgnoredTest), nameof(Data))]
+        public void IgnoreTestWithTestCaseData(string data)
+        {
+            Console.WriteLine(data);
+        }
     }
-
-
 }

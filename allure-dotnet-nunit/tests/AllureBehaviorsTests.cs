@@ -16,6 +16,7 @@ namespace allure_nunit.tests
 
         [Test]
         [AllureFeature("f2")]
+        [AllureStory("A")]
         public void F2()
         {
             Assert.IsTrue(true);

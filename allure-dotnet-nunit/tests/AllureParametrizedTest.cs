@@ -8,6 +8,16 @@ namespace allure_nunit.tests
     [AllureSuite("Tests - Parametrized")]
     public class AllureParametrizedTest : BaseTest
     {
+        public static IEnumerable TestCasesReturns
+        {
+            get
+            {
+                yield return new TestCaseData(12, 3).Returns(4);
+                yield return new TestCaseData(12, 2).Returns(6);
+                yield return new TestCaseData(12, 4).Returns(3);
+            }
+        }
+
         [Test]
         [AllureSubSuite("Returns")]
         [AllureTag("TestCaseSource")]
@@ -41,16 +51,6 @@ namespace allure_nunit.tests
         public void RangeTest([Range(0, 2)] int value)
         {
             Console.WriteLine($"Got {value} from 0 to 2");
-        }
-
-        public static IEnumerable TestCasesReturns
-        {
-            get
-            {
-                yield return new TestCaseData(12, 3).Returns(4);
-                yield return new TestCaseData(12, 2).Returns(6);
-                yield return new TestCaseData(12, 4).Returns(3);
-            }
         }
     }
 }
