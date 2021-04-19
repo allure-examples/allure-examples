@@ -32,6 +32,7 @@ class AssumeStepContext:
         def decorator(*args, **kwargs):
             with self.suppress:
                 return allure.step(self.title)(f)(*args, **kwargs)
+
         return decorator
 
     def __enter__(self):

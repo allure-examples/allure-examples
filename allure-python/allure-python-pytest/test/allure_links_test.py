@@ -16,3 +16,12 @@ def test_allure_dynamic_links():
                          name="ISSUE-1")
     allure.dynamic.testcase("https://github.com/allure-examples/allure-examples/issues/2",
                             name="TESTCASE-2")
+
+
+def pr(pr_id):
+    return allure.link(pr_id, name=f"PR {pr_id}", link_type="pr")
+
+
+@pr("123")
+def test_link_templates():
+    pass
