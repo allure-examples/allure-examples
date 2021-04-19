@@ -102,3 +102,44 @@ jobs:
           message: ${{ github.event.head_commit.message }}
           force: true
           github_token: ${{ secrets.QAMETA_TOKEN }}
+
+  robotframework:
+    env:
+      ROBOTFRAMEWORK_WORKDIR: ./${{ github.workflow }}/${{ github.workflow }}-robotframework
+    name: Push to repo allure-python-robotframework
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      - name: Set up Python 3.x
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        working-directory: ${{ env.ROBOTFRAMEWORK_WORKDIR }}
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Copy needed files
+        run: |
+          mkdir -p result
+          cp -r $ROBOTFRAMEWORK_WORKDIR/. ./result
+          mkdir -p ./result/.github/workflows
+          cp ${{ github.workflow }}/.github/workflows/${{ github.workflow }}-robotframework.yml ./result/.github/workflows
+          ls -l result
+
+      - run: git init
+        working-directory: result
+
+      - name: Push
+        uses: actions-js/push@master
+        with:
+          repository: allure-examples/${{ github.workflow }}-robotframework
+          directory: result
+          message: ${{ github.event.head_commit.message }}
+          force: true
+          github_token: ${{ secrets.QAMETA_TOKEN }}
