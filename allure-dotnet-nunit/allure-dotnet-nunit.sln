@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "allure-dotnet-nunit", "allure-dotnet-nunit.csproj", "{611C88B6-3105-4B5A-A155-7392E25BDD7A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{611C88B6-3105-4B5A-A155-7392E25BDD7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{611C88B6-3105-4B5A-A155-7392E25BDD7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{611C88B6-3105-4B5A-A155-7392E25BDD7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{611C88B6-3105-4B5A-A155-7392E25BDD7A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BFA48F82-0F51-43AC-A1F6-C8D1F518EB2D}
+	EndGlobalSection
+EndGlobal

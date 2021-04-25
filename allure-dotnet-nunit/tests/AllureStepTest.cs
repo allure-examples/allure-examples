@@ -2,7 +2,6 @@ using System;
 using Allure.Commons;
 using NUnit.Allure.Attributes;
 using NUnit.Allure.Core;
-using NUnit.Allure.Steps;
 using NUnit.Framework;
 
 namespace allure_nunit.tests

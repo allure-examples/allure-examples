@@ -22,5 +22,12 @@ namespace allure_nunit.tests
         public void AllureTagsTest()
         {
         }
+
+        [Test]
+        [AllureName("Custom name test")]
+        [AllureDescription("This is a description")]
+        public void TestWithCustomName()
+        {
+        }
     }
 }
