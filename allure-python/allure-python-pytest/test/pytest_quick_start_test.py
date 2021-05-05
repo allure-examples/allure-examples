@@ -18,6 +18,8 @@ def test_allure_simple_test():
 
 
 @allure.step("Simple function with step decorator")
-def simple_step_func():
+def simple_step_func(param):
+    with allure.step(f"function parameter: {param}"):
+        pass
     with allure.step("Simple step inside test function"):
         pass

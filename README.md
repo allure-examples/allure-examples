@@ -77,6 +77,9 @@ Allure Report links auto redirect to the last build
 [![allure-python-behave](https://github.com/allure-examples/allure-python-behave/workflows/allure-python-behave/badge.svg)](https://github.com/allure-examples/allure-python-behave)
 [![Allure Report](https://img.shields.io/badge/Allure%20Report-deployed-yellowgreen)](https://allure-examples.github.io/allure-python-behave/)
 
+[![allure-python-robotframework](https://github.com/allure-examples/allure-python-robotframework/workflows/allure-python-robotframework/badge.svg)](https://github.com/allure-examples/allure-python-robotframework)
+[![Allure Report](https://img.shields.io/badge/Allure%20Report-deployed-yellowgreen)](https://allure-examples.github.io/allure-python-robotframework/)
+
 ## allure-javascript
 [![allure-javascript](https://github.com/allure-examples/allure-examples/workflows/allure-javascript/badge.svg)](https://github.com/allure-examples/allure-examples/actions?query=workflow%3Aallure-javascript)
 

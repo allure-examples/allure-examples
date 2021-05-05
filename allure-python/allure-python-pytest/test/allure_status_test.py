@@ -14,16 +14,16 @@ def test_broken():
     assert var
 
 
-@pytest.skip("Some skip reason")
+@pytest.mark.skip(reason="Some skip reason")
 def test_skipped():
     pass
 
 
-@pytest.xfail("Some xfail reason")
+@pytest.mark.xfail(reason="Some xfail reason")
 def test_xfail():
     assert False, "Assertion failed"
 
 
-@pytest.xfail("Test doesn't fail")
+@pytest.mark.xfail(reason="Test doesn't fail")
 def test_xpass():
     pass
