@@ -12,13 +12,11 @@ import static io.qameta.allure.Allure.step;
 public class AllureParameterizedTest {
 
     @ParameterizedTest(name = "{displayName} [{argumentsWithNames}]")
-    @ValueSource(strings = {"First Name", "Second Name"})
+    @ValueSource(strings = {"John", "Mike"})
     @DisplayName("allureParameterizedTest displayName")
     @Description("allureParameterizedTest description")
-    public void allureParameterizedTest(String testParam) {
-        parameter("testParam", testParam);
-        step("Step inside parameterized test");
-        step("Test parameter: " + testParam);
+    public void allureParameterizedTest(String name) {
+        parameter("Name", name);
     }
 
     @Test

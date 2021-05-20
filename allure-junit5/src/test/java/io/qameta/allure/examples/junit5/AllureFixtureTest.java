@@ -21,11 +21,6 @@ public class AllureFixtureTest {
         step("Step inside allureFixtureTest");
     }
 
-    @Test
-    public void allureFixtureTest2() {
-        step("Step inside allureFixtureTest2");
-    }
-
     @AfterEach
     public void afterEach() {
         step("Step inside afterEach");
