@@ -1,8 +1,22 @@
 import json
 import os
+from functools import wraps
 
 import allure
 from allure import attachment_type
+
+
+# attach a file of the specified type by a decorator
+def attach_pcap(path):
+    def outer(func):
+        @wraps(func)
+        def inner(*args, **kwargs):
+            allure.attach.file(path, attachment_type=allure.attachment_type.PCAP)
+            return func(*args, **kwargs)
+
+        return inner
+
+    return outer
 
 
 def test_attach():
